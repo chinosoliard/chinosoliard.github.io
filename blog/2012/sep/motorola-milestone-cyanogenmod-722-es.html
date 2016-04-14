@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+	<head>
+	<title>Chino Soliard</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" id="responsive-style-css"  href='/theme/css/style.css' type="text/css" media="all" />
+	<link rel="stylesheet" id="responsive-style-css"  href='/theme/css/highlight.css' type="text/css" media="all" />
+	<link href="http://chinosoliard.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Full Atom Feed" />
+
+
+
+
+	<link href="http://chinosoliard.github.io/feeds/smartphones.atom.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Categories Atom Feed" />
+
+
+
+	</head>
+	<body id="index" class="blog">
+		<div id="container" class="hfeed">
+
+<header id="header" >
+		<h1>Chino Soliard</h1>
+		<h2>IT specialist | Technologies explorer | FOSS enthusiast | Fedora Contributor</h2>
+</header>    
+	
+<nav id="menu">
+	<a href="http://chinosoliard.github.io/index.html">$ ./Blog </a>
+	<a href="http://chinosoliard.github.io/archives.html">$ ./BlogHistory </a> 
+	<a href="http://chinosoliard.github.io/categories.html">$ ./CategoriesList</a>
+	
+	<a href="http://chinosoliard.github.io/pages/about-me.html">$ ./pages/AboutMe</a>
+	
+</nav> <!-- /#nav -->
+			<section id="wrapper" class="clearfix">
+
+				<section id="content" class="grid col-620" >
+						<section class="breadcrumbs-list">
+						</section>
+
+<section id="post" class="post hentry">
+	<header>
+		<h2 class="post-title" >CyanogenMod 7.2.2 en Motorola Milestone</h2>
+<p>
+###############
+</br>Date = <time datetime="2012-09-26" pubdate="pubdate">2012-09-26</time>
+</br>Category = <a href="http://chinosoliard.github.io/category/smartphones.html">Smartphones</a>
+</br>
+Tags = <a href="http://chinosoliard.github.io/tag/android.html">Android</a> <a href="http://chinosoliard.github.io/tag/cyanogenmod.html">CyanogenMod</a> <a href="http://chinosoliard.github.io/tag/gingerbread.html">Gingerbread</a> <a href="http://chinosoliard.github.io/tag/milestone.html">Milestone</a> <a href="http://chinosoliard.github.io/tag/motorola.html">Motorola</a></br>
+Lang = es </br>
+Translations:
+none
+
+</br>###############
+</p>	</header>
+	<div class="post-entry">
+		<p>Acabo de instalar la versión final de <strong>Cyanogenmod</strong> (7.2.2) en mi <strong>Motorola Milestone</strong>, anteriormente había instalado la Release Candidate 2 de la versión 7.0.2 y el gran problema que el encontré fue que no podía bloquear la pantalla.</br>A continuación explico los pasos a seguir para concretar la instalación (los cuales fueron extraídos en su mayoría de <a href="http://www.mrmuh.com/2012/01/update-a-motorola-milestone-from-motorola-firmware-to-cyanogenmod-7">aquí</a>.</p>
+        	<p>Para empezar, aclaro que hay que tener cuidado a la hora de hacer este tipo de trabajos, y siempre hay que tener la <strong>batería cargada</strong>. Tambien, el celular debe estar en con la versión oficial  de Android 2.2 de Motorola.  </p>
+<p>Listo los archivos que se van a necesitar, así los descargas de antemano y no hay contratiempos:  </p>
+<ul>
+<li><a href="http://adf.ly/deE4L" title="OpenRecovery 1.46">OpenRecovery 1.46</a>.</li>
+<li><a href="http://adf.ly/deE5G" title="Vulnerable Recovery for Milestone">Vulnerable Recovery para Milestone</a>.</li>
+<li>Drivers Motorola (<a href="http://adf.ly/deE6O">32-bits</a> o <a href="http://adf.ly/deE7R">64-bits</a>, dependiendo de tu sistema operativo).</li>
+<li><a href="http://adf.ly/deE8f" title="RDSLite 5.7">RSDLite 5.7.</a>.</li>
+<li><a href="http://adf.ly/deEAA">La última versión de CyanogenMod disponible</a> (Actualmente 7.2.2).</li>
+<li><a href="http://adf.ly/deEBE">Google Apps</a> (Ultima versión 2011-12-16). (Podés fijarte <a href="http://android.doshska.net/cm7">acá</a> si hay una nueva versión).</li>
+</ul>
+<p>Ahora, vamos a lo nuestro...</p>
+<ol>
+<li>
+<p><strong>Preparar OpenRecovery</strong><br />
+  OpenRecovery son herramientas para la gestión del equipo y del sistema operativo, el cual vas a usar para restaurar el celular a fabrica, actualizarlo y, básicamente, todos los pasos a seguir.</p>
+<ol>
+<li>
+<p>Descarga <a href="http://adf.ly/deE4L">OpenRecovery 1.46</a>, y lo descomprimís en el directorio raíz  de la tarjeta MicroSD del equipo. (Esta es la ultima versión del OR hasta la fecha, y tiene anidados modulos y librerías, para el manejo de la tarjeta MicroSD, disposición del teclado, bandas de funcionamiento, etc).</p>
+</li>
+<li>
+<p>Ahora deberías tener una carpeta “OpenRecovery” y un archivo “update.zip” en tu tarjeta MicroSD.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Instalar el “Vulnerable Recovery”</strong><br />
+  El “Vulnerable Recovery” no cambia nada en el sistema del dispositivo, solo flashea la partición de recuperación original, permitiendo que se ejecute el OpenRecovery desde la MicroSD.</p>
+<ol>
+<li>
+<p>Descarga “Vulnerable Recovery”, los drivers (depende si tu sistema operativo es 32-bits o 64-bits) y RSDLite. Instala primero los drivers y luego RSDLite.</p>
+</li>
+<li>
+<p>Apaga el teléfono, y lo encendes en modo Bootloader, para esto, lo apagas y apretás la tecla de arriba (del teclado qwerty, no la de volumen) mientras presionas la tecla de encendido.</p>
+</li>
+<li>
+<p>Conectás el Milestone a la computadora y esperas que Windows instale los drivers.</p>
+</li>
+<li>
+<p>Ejecutá RSDLite, y el dispositivo debería estar aparecer en la lista (S Flash OMAP3430) como “conected”.</p>
+</li>
+<li>
+<p>Elegí el archivo sbf del vulnerable recovery haciendo clic en el botón “…” que aparece arriba.</p>
+</li>
+<li>
+<p><strong>IMPORTANTE:</strong> Cuando el teléfono se reinicie luego de empezar el proceso de flasheo, es MUY recomendable que no llegue a iniciar android, e inicie Open Recovery. Para esto hay que mantener el botón de la cámara presionado mientras el equipo se reinicia, hasta que aparezca un triangulo.<br />
+Haz clic en el botón “start” y espera a que el teléfono reinicie. Acordate de mantener el botón de la cámara precionado cuando esto pase.</p>
+</li>
+<li>
+<p>Cuando el dispositivo haya iniciado Open Recovery, RSDLite no va a haber terminado (y nunca lo va a hacer), ignora cualquier cartel de advertencia y cerralo, ya está listo.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Instalar OpenRecovery</strong><br />
+  NOTA:Todas las veces que quieras inicar el equipo en modo recovery debes mantener el botón de la cámara junto con el de encendido.</p>
+<ol>
+<li>
+<p>Cuando el triangulo aparezca, mantené presionado el botón de subir el volumen y apretás el botón de la cámara. Con esto, accedes al recovery actual, es decir, el que trae Motorola Milestone.</p>
+</li>
+<li>
+<p>Para terminar de instalar OpenRecovery, tenés que seleccionar “apply sdcard:update.zip”. (La navegación por el menú es con las direcciones del teclado qwerty y el botón del medio actúa como ENTER).</p>
+</li>
+<li>
+<p>Después de un rato, verás que el menú cambió. Ahora, inclusive, puedes moverte con las teclas de volumen, y el botón de la cámara hace de ENTER.<br />
+Debería verse algo como la siguiente imagen:<br />
+<center><img alt="OpenRecovery" src="http://2.bp.blogspot.com/_8HmrfJJQrGw/TSMoFnnO3ZI/AAAAAAAAA8M/9agds36If-U/s1600/xt720%2Bopenrecovery.png" title="OpenRecovery" /></center>  </p>
+</li>
+<li>
+<p>En el punto 2.6, dije que no convenía que el teléfono iniciara Android, la razón es porque Motorola instala un script que instala el recovery original, este se ejecuta cada vez que se inicia Android.<br />
+Para eliminarlo:</p>
+<ol>
+<li>Ejecutamos la consola (“console”) de OpenRecovery</li>
+<li>Ejecutamos el comando “rm -f /system/etc/install-recovery.sh”</li>
+<li>Ahora ejecutamos “exit” para salir, y listo.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Particion para Aplicaciones (Opcional)</strong><br />
+  A pesar de ser un paso opcional, es recomandado hacerlo, aumenta el espacio para instalar aplicaciones de tu teléfono.  </p>
+<blockquote>
+<p><strong>NOTA:</strong> Siempre que quieras cambiar la disposición de teclado de OpenRecovery, tenés que ir a “settings/Keyboard Layout” y cambiarlo.</p>
+</blockquote>
+<p>Para hacer esto, necesitas: </p>
+<ul>
+<li>Más de 1GB, ya que la particion que vamos a hacer es de 1GB, y necesitas para los demás datos.</li>
+<li>Conocimientos básicos sobre Linux y particiones.</li>
+<li>Un backup de los datos de la SD (por si no se cumple muy bien el punto anterior).</li>
+</ul>
+<p>Dentro del menú de OpenRecovery, nos vamos a la consola (“console”). Ahí:</p>
+<ol>
+<li>Desmontamos la tarjeta con el comando “umount /sdcard”.</li>
+<li>Iniciamos el editor de particiones parted con el comando “parted /dev/block/mmcblk0”.<br />
+<strong>IMPORTANTE:</strong> Dentro de parted la tecla borrar NO FUNCIONA, así que tené mucho cuidado con lo que escribes.  </li>
+<li>Listá la tabla de particiones de tu MicroSD con el comando “print”<br />
+Deberías ver algo como la imagen siguiente:<br />
+Es importante que anotes el tamaño exacto de la tarjeta. Verás “Disk /dev/block/mmcblk0: XXXXMB”, esos XXXXMB son el tamaño exacto de la tarjeta.</li>
+<li>Redimensiona la partición FAT32 para dejar 1GB libre (1024MB). En el caso de la imagen, la partición sería 7969MB – 1024MB = 6945MB.<br />
+Para hacerlo, ejecuta el comando “resize 1 0MB 6945MB”, donde:<ul>
+<li>1 es el número de partición.</li>
+<li>0MB es donde comenzaría la partición.</li>
+<li>6945MB es donde terminaría la partición.</li>
+</ul>
+</li>
+<li>Creá la particion ext2 usando los 1024MB que quedaron libres al final de la partición en el paso anterior.
+Usa el comando “mkpartfs primary ext2 6945MB 7969MB”, donde:<ul>
+<li>“primary” es el tipo de partición.</li>
+<li>“ext2” es el sistema de archivos.</li>
+<li>6945MB es donde comenzaría la partición.</li>
+<li>7969MB es donde terminaría la partición.</li>
+</ul>
+</li>
+<li>Listá nuevamente las particiones, para corroborar que todo haya salido bien, esto con el comando “print”.<br />
+   Debería verse algo parecido a la imagen siguiente.</li>
+<li>Si todo salió bien, con el comando “quit” salimos de parted.</li>
+<li>Convertimos la particion ext2 a ext3, usando el comando “tune2fs -j /dev/block/mmcblk0p2”.</li>
+<li>Todo listo, salimos de la consola con el comando “exit”.<blockquote>
+<p><strong>NOTA:</strong> Durante el uso del teléfono, no se podrá admirar el espacio, pero cuando instalas aplicaciones, veras que no disminuye el espacio ocupado por esta.</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Instalar CyanogenMod</strong><br />
+  El último paso es instalar CyanogenMod. Una vez que tengás <a href="http://adf.ly/deEAA">la última versión descargada</a> y las <a href="http://adf.ly/deEBE">Google Apps</a>,los pasos a seguir son:  </p>
+<ol>
+<li>Iniciar el equipo en OpenRecovery.</li>
+<li>Elige “Wipe Dalvik cache”.</li>
+<li>Luego, elige “Wipe data / Factory Reset” (te apareceran como 9 “no” y 1 “yes”, esto es por seguridad, dale al “yes”, obvio).</li>
+<li>Ahora selecciona “Wipe cache partition”.</li>
+<li>Te vas a “Apply update” y seleccionas el archivo de Cyanogen que descargaste. (Existen otros test-*, que son solo pruebas y muestras, si te molestan los borras).</li>
+<li>Después seleccionas las Google Apps, tambien en el menu de “Apply update”.</li>
+<li>Volvés al menú principal de OpenRecovery, seleccionas “Reboot System” y listo.</li>
+<li>Lo dejás iniciar CyanogenMod, la primera vez demora un poco más de lo normal.</li>
+</ol>
+</li>
+<li>
+<p><strong>Actualizar CyanogenMod</strong>
+  Es recomendable mantener CyanogenMod actualizado, de vez en cuando fijate si hay una versión nueva, y para actualizar, los pasos son:</p>
+<ol>
+<li>Iniciar el teléfono en OpenRecovery.</li>
+<li>Selecciona “Wipe Cache partition”.</li>
+<li>Selecciona “Wipe Dalvik cache”.</li>
+<li>Instala la actualización desde “Apply Update”.</li>
+<li>Reinicia el equipo, y estará iniciando la nueva versión de Cyanogen (Toma más tiempo de lo normal).</li>
+</ol>
+</li>
+</ol>
+<p><strong>Espero les haya servido</strong></p>
+	</div><!-- /.entry-content -->        
+</section>
+				</section><!-- #content -->
+
+<section id="widgets" class="grid col-300 fit" >
+<section id="widget-image-1" class="widget-image">
+	<div class="widget" id="widget">
+		<a href="http://www.fedoraproject.org" target="_blank" alt="Fedora Project">
+		<img src="http://chinosoliard.github.io/images/widgets/widget-1.png">
+		</a>
+	</div>
+</section>
+	<!-- 	<section id="widget-search" class="widget-wrapper widget_search">
+		<form id="searchform" action="http://www.google.com/search" method="get">
+			<input id="q" class="field" type="text" placeholder="Search Blog" name="q" ></input>
+			<input id="ie" name="ie" type="hidden" value="utf-8" ></input>
+			<input id="oe" name="oe" type="hidden" value="utf-8" ></input>
+			<input id="channel" name="channel" type="hidden" value="suggest" ></input>
+			<input id="searchsubmit" class="submit" type="submit" value="">
+		</form>
+	</section>
+ -->
+
+<section id="widget-tagcloud" class="widget-wrapper widget_archive">
+	<div class="widget-title">
+		Tagcloud
+	</div>
+	<div>
+	</div>
+</section>
+ 
+<section id="widget-links" class="widget-wrapper widget_archive">
+	<div class="widget-title">
+		Links
+	</div>
+	<ul>
+		<li><a href="http://www.fedoraproject.org">Fedora Project</a></li>
+		<li><a href="http://www.lugparana.org">LUG Paraná (AR)</a></li>
+		<li><a href="http://www.python.org">Python</a></li>
+		<li><a href="http://www.sysarmy.com.ar">SysArmy</a></li>
+	</ul>
+</section>
+
+</section><!-- widgets -->
+	
+			</section><!-- /#wrapper -->
+
+	<footer id="footer" class="clearfix">
+		<div class="grid col-940" >
+        		<p>Theme responsive-cli-theme by <a href="http://www.chinosoliard.com">Chino Soliard</a></p>
+			<p>Powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a></p>
+		</div>
+	</footer>
+
+	</div>
+</body>
+</html>

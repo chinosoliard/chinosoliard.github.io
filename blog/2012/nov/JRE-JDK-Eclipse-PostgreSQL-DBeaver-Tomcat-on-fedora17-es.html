@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+	<head>
+	<title>Chino Soliard</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" id="responsive-style-css"  href='/theme/css/style.css' type="text/css" media="all" />
+	<link rel="stylesheet" id="responsive-style-css"  href='/theme/css/highlight.css' type="text/css" media="all" />
+	<link href="http://chinosoliard.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Full Atom Feed" />
+
+
+
+
+	<link href="http://chinosoliard.github.io/feeds/fedora.atom.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Categories Atom Feed" />
+
+
+
+	</head>
+	<body id="index" class="blog">
+		<div id="container" class="hfeed">
+
+<header id="header" >
+		<h1>Chino Soliard</h1>
+		<h2>IT specialist | Technologies explorer | FOSS enthusiast | Fedora Contributor</h2>
+</header>    
+	
+<nav id="menu">
+	<a href="http://chinosoliard.github.io/index.html">$ ./Blog </a>
+	<a href="http://chinosoliard.github.io/archives.html">$ ./BlogHistory </a> 
+	<a href="http://chinosoliard.github.io/categories.html">$ ./CategoriesList</a>
+	
+	<a href="http://chinosoliard.github.io/pages/about-me.html">$ ./pages/AboutMe</a>
+	
+</nav> <!-- /#nav -->
+			<section id="wrapper" class="clearfix">
+
+				<section id="content" class="grid col-620" >
+						<section class="breadcrumbs-list">
+						</section>
+
+<section id="post" class="post hentry">
+	<header>
+		<h2 class="post-title" >JRE, JDK, Eclipse, PostgreSQL, DBeaver y Apache Tomcat en Fedora 17</h2>
+<p>
+###############
+</br>Date = <time datetime="2012-11-07" pubdate="pubdate">2012-11-07</time>
+</br>Category = <a href="http://chinosoliard.github.io/category/fedora.html">Fedora</a>
+</br>
+Tags = <a href="http://chinosoliard.github.io/tag/apache.html">apache</a> <a href="http://chinosoliard.github.io/tag/database.html">database</a> <a href="http://chinosoliard.github.io/tag/db.html">db</a> <a href="http://chinosoliard.github.io/tag/dbeaver.html">dbeaver</a> <a href="http://chinosoliard.github.io/tag/eclipse.html">eclipse</a> <a href="http://chinosoliard.github.io/tag/fedora.html">Fedora</a> <a href="http://chinosoliard.github.io/tag/gnulinux.html">GNU/Linux</a> <a href="http://chinosoliard.github.io/tag/java.html">java</a> <a href="http://chinosoliard.github.io/tag/java-development-kit.html">Java Development Kit</a> <a href="http://chinosoliard.github.io/tag/java-runtime-environment.html">Java Runtime Environment</a> <a href="http://chinosoliard.github.io/tag/jdk.html">jdk</a> <a href="http://chinosoliard.github.io/tag/jre.html">jre</a> <a href="http://chinosoliard.github.io/tag/postgresql.html">postgresql</a> <a href="http://chinosoliard.github.io/tag/sql.html">sql</a> <a href="http://chinosoliard.github.io/tag/tomcat.html">tomcat</a></br>
+Lang = es </br>
+Translations:
+none
+
+</br>###############
+</p>	</header>
+	<div class="post-entry">
+		<p>En la catedra “Administración de Base de Datos” de Tecnicatura Superior en Programación usamos PostgreSQL como motor de base de datos, y en la catedra Laboratorio de Computación 4 usamos Eclipse como IDE de desarrollo Java, Apache Tomcat 7 como servidor de aplicaciones web JSP y tambien PostgreSQL como motor de base de datos, aunque también existe la posibilidad de usar Firebird.</br></br>A continuación, una pequeña guía de como instalar en Fedora 17 los programas anteriores y DBeaver, un administrador de base de datos muy bueno, que tiene la capacidad de gestionar diversos motores.</p>
+        	<ol>
+<li>
+<p><strong>Descargamos <a href="http://www.eclipse.org/downloads/">Eclipse IDE</a>, <a href="http://dbeaver.jkiss.org/download/">DBeaver</a> y <a href="http://tomcat.apache.org/download-70.cgi">Apache Tomcat 7</a>, <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK y JRE</a> de sus respectivos sitios web</strong><br />
+  <p>En la facultad, trabajamos con la <a href="http://www.eclipse.org/indigo/">version 3.7 (Indigo SR2)</a> de Eclipse, aunque existen varias versiones, así que descargamos la versión que queramos, siempre acorde a la arquitectura de nuestro sistema operativo.</p>
+  <p>Descargamos tambien <a href="http://dbeaver.jkiss.org/download/">DBeaver</a>, en formato ZIP, correspondiente a la arquitectura de nuestro sistema operativo.</p>
+  <p>En el caso de <a href="http://tomcat.apache.org/download-70.cgi">Tomcat</a>, descargamos de “Core” el archivo tar.gz.</p>
+  <p>De la página oficial de <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Oracle</a>, descargamos los paquetes RPM de las últimas versiones de JRE y JDK disponibles.</p>
+  <p>Mientras se descargan estos paquetes, podemos continuar con los pasos siguientes.</p></p>
+</li>
+<li>
+<p><strong>Instalamos PostgreSQL server, y lo configuramos</strong></p>
+<ul>
+<li>
+<p>Para instalarlo, ejecutamos en una consola el siguiente comando:<br />
+<code>$ sudo yum install postgresql-server</code>  </p>
+</li>
+<li>
+<p>Una vez instalado debemos iniciar los servicios, para ello ejecutamos en la consola:<br />
+<code>$ sudo service postgresql initdb</code><br />
+<code>$ sudo service postgresql start</code></p>
+</li>
+<li>
+<p>Después, cambiamos la contraseña del usuario postgres, con el siguiente comando en una consola:<br />
+<code>$ sudo passwd postgres</code>  </p>
+</li>
+<li>
+<p>Ahora, iniciamos sesión con el usuario postgres en una consola, usamos el comando “su” (Swich User, permite abrir una sesion con el ID de otro usuario):<br />
+<code>$ su postgres</code><br />
+<em>Debería aparecer un prompt “bash-4.1$”</em></p>
+</li>
+<li>
+<p>Ahora entramos a Postgres, escribiendo en ese prompt el comando “psql“:<br />
+<code>bash-4.2$ psql</code>  </p>
+</li>
+<li>
+<p>Procedemos a cambiar la contraseña, realizando la siguiente consulta en postgres=# , donde “CONTRASEÑA” es la misma que pusieron arriba:<br />
+<code>postgres=# ALTER USER postgres WITH PASSWORD 'CONTRASEÑA';</code><br />
+<em>Si todo salió bien debería aparecer “ALTER ROLE”.</em>  </p>
+</li>
+<li>
+<p>Salimos de Postgres:<br />
+<code>\q</code>  </p>
+</li>
+<li>
+<p>y luego en el prompt “bash-4.1$“:<br />
+<code>exit</code>  </p>
+</li>
+<li>
+<p>Ahora configuramos el puerto de PostgreSQL, ejecutamos en la consola el siguiente comando
+  <code>$ sudo gedit /var/lib/pgsql/data/postgresql.conf</code><br />
+  Donde dice <code>#listen_addresses = ‘localhost'</code>, lo cambiamos por <code>listen_addresses = ‘*'</code>.<br />
+  Y en la línea que dice <code>#port = 5432</code>, le quitamos el <code>#</code>, debería quedar sólo <code>port = 5432</code>.  </p>
+</li>
+<li>
+<p>Ahora procedemos a configurar la configuración de autenticación, editando el archivo pg_hba.conf, ejecutamos en la consola el siguiente comando<br />
+<code>$ sudo gedit /var/lib/pgsql/data/pg_hba.conf</code><br />
+  Ubicamos la linea que dice <code>host all all 127.0.0.1/32 ident'</code>, lo cambiamos por <code>host all all 127.0.0.1/32 md5</code>.<br />
+  Con éste cambio le indicamos a PostgreSQL que las conexiones desde el mismo servidor (localhost) deben autenticarse por md5.  </p>
+</li>
+<li>
+<p>Reiniciamos Postgres para que se realicen los cambios.<br />
+<code>sudo service postgresql restart</code>  </p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Instalamos JRE (Java Runtime Environment)</strong><br />
+  En una consola, nos dirigimos al directorio donde descargamos el instalador de JRE, y ejecutamos los siguientes comandos:<br />
+<code>$ sudo rpm -ivh jre-7u?-linux-*.rpm</code><br />
+<code>$ sudo /usr/sbin/alternatives --install /usr/bin/java java /usr/java/default/bin/java 20000</code>  </p>
+</li>
+<li>
+<p><strong>Instalamos JDK (Java Development Kit)</strong><br />
+  Nos dirigimos al directorio donde se encuentra el instalador de JDK en una consola, y ejecutamos el comando a continuación:<br />
+<code>$ sudo rpm -ivh jdk-7u?-linux-*.rpm</code>  </p>
+</li>
+<li>
+<p><strong>Instalamos Apache Tomcat 7</strong>  </p>
+<ul>
+<li>
+<p>En una consola, nos dirigimos al directorio donde esta el archivo de Tomcat que descargamos.  </p>
+</li>
+<li>
+<p>Ejecutamos el siguiente comando para extraer los archivos:<br />
+<code>$ sudo tar -xvzf apache-tomcat-*.tar.gz</code>  </p>
+</li>
+<li>
+<p>Después, movemos lo extraido a /usr/share/tomcat, con el comando que sigue, completando “*” con el nombre exacto de la carpeta<br />
+<code>$ sudo mv apache-tomcat-* /usr/share/tomcat</code>  </p>
+</li>
+<li>
+<p>Ahora, creamos el archivo necesario para que se identifique a tomcat como servicio, así podemos iniciarlo, reiniciarlo y detenerlo.<br />
+<code>$ sudo gedit /etc/init.d/tomcat</code>  </p>
+</li>
+<li>
+<p>Dentro de ese archivo...<br />
+<code>
+#!/bin/bash<br />
+# description: Tomcat Start Stop Restart<br />
+# processname: tomcat<br />
+# chkconfig: 234 20 80<br />
+JAVA_HOME=/usr/java/default/<br />
+export JAVA_HOME<br />
+PATH=$JAVA_HOME/bin:$PATH<br />
+export PATH<br />
+CATALINA_HOME=/usr/share/tomcat<br />
+case $1 in<br />
+start)<br />
+sh $CATALINA_HOME/bin/startup.sh<br />
+;;<br />
+stop)<br />
+sh $CATALINA_HOME/bin/shutdown.sh<br />
+;;<br />
+restart)<br />
+sh $CATALINA_HOME/bin/shutdown.sh<br />
+sh $CATALINA_HOME/bin/startup.sh<br />
+;;<br />
+esac<br />
+exit 0<br />
+</code> </p>
+<ul>
+<li>
+<p>En donde dice <code>JAVA_HOME=/usr/java/default/</code> se debe poner la ruta al programa que proporciona Java, para averiguarlo, en una consola ejecutan el comando:<br />
+<code>$ alternatives --config java</code>  </p>
+</li>
+<li>
+<p>Esto arroja un listado de los programas que aportan Java, y especifica cual es el que está por defecto. En mi caso, me listó lo siguiente:<br />
+<code>
+Hay 2 programas que proporcionan 'java'.</br><br />
+Selección   Comando<br />
+-----------------------------------------------<br />
+ *+ 1      /usr/java/default/bin/java<br />
+ 2 /usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java</br><br />
+Presione Intro para mantener la selección actual[+], o escriba el número de la selección:
+</code></br><br />
+<em>Fijensé que la ruta que aparece en el archivo no es la absoluta a Java (usr/java/default/bin/java), si no a el directorio home de Java (usr/java/default/)</em>  </p>
+</li>
+</ul>
+</li>
+<li>
+<p>Finalmente, ejecutamos los siguientes 3 comandos:<br />
+<code>$ sudo chmod 755 /etc/init.d/tomcat<br />
+      $ sudo chkconfig --add tomcat<br />
+      $ sudo chkconfig --level 234 tomcat on</code></br><br />
+y listo, ya podemos iniciar, detener y reiniciar tomcat</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Instalamos DBeaver</strong>  </p>
+<ul>
+<li>
+<p>Abrimos una consola y nos dirigimos al directorio donde descargamos el archivo zip de DBeaver  </p>
+</li>
+<li>
+<p>Extraemos los archivos con este comando:<br />
+<code>$ sudo unzip dbeaver-<em>-linux.gtk.</em>.zip</code>  </p>
+</li>
+<li>
+<p>Después lo movemos a /opt, con el comando a continuación:<br />
+<code>$ sudo mv dbeaver /opt/dbeaver</code>  </p>
+</li>
+<li>
+<p>Le damos los permisos correspondientes:<br />
+<code>$ sudo chmod -R +r /opt/dbeaver/</code>  </p>
+</li>
+<li>
+<p>Creamos un ejecutable en el directorio /usr/bin, con los comandos próximos:<br />
+<code>$ sudo touch /usr/bin/dbeaver<br />
+$ sudo chmod 755 /usr/bin/dbeaver<br />
+$ sudo gedit /usr/bin/dbeaver</code>  </p>
+</li>
+<li>
+<p>Y en el archivo copiamos lo que esta a sucesor:<br />
+<code>xport DBEAVER_HOME="/opt/dbeaver"<br />
+$DBEAVER_HOME/dbeaver $*</code>  </p>
+</li>
+<li>
+<p>Ahora, creamos el acceso directo en el menú de aplicaciones de GNOME<br />
+<code>$ sudo gedit /usr/share/applications/dbeaver.desktop</code>  </p>
+</li>
+<li>
+<p>Y copiamos el texto posterior
+<code>[Desktop Entry]<br />
+Encoding=UTF-8<br />
+Name=DBeaver<br />
+Comment=Administrador de base de datos DBeaver<br />
+Exec=dbeaver<br />
+Icon=/opt/dbeaver/icon.xpm<br />
+Terminal=false<br />
+Type=Application<br />
+Categories=GNOME;Application;Development;<br />
+StartupNotify=true</code>  </p>
+</li>
+</ul>
+<p>Y listo, ya tenemos instalado DBeaver en nuestro sistema  </p>
+</li>
+<li>
+<p><strong>Instalamos Eclipse IDE</strong>  </p>
+<ul>
+<li>
+<p>En una consola, nos dirigimos al directorio donde descargamos el archivo tar.gz de Eclipse.  </p>
+</li>
+<li>
+<p>Extraemos el contenido del archivo en /opt con el siguiente comando:<br />
+  <code>$ sudo tar -xvzf eclipse-<em>-linux-gtk-</em>.tar.gz -C /opt</code>  </p>
+</li>
+<li>
+<p>Le damos permiso de lectura a todos los archivos con el comando a continuación:<br />
+  <code>$ sudo chmod -R +r /opt/eclipse</code>  </p>
+</li>
+<li>
+<p>Creamos un ejecutable en el directorio /usr/bin:<br />
+  <code>$ sudo touch /usr/bin/eclipse<br />
+  $ sudo chmod 755 /usr/bin/eclipse<br />
+  $ sudo gedit /usr/bin/eclipse</code>  </p>
+</li>
+<li>
+<p>y en el gedit copiar lo próximo:
+  <code>export ECLIPSE_HOME="/opt/eclipse"<br />
+  $ECLIPSE_HOME/eclipse $*</code>  </p>
+</li>
+<li>
+<p>Luego, creamos el archivo para hacer el acceso directo en el menú en GNOME:<br />
+  <code>$ sudo gedit /usr/share/applications/eclipse.desktop</code>  </p>
+</li>
+<li>
+<p>Y en el gedit copiamos el texto consecuente:<br />
+  <code>[Desktop Entry]<br />
+  Encoding=UTF-8<br />
+  Name=Eclipse<br />
+  Comment=Eclipse<br />
+  Exec=eclipse<br />
+  Icon=/opt/eclipse/icon.xpm<br />
+  Terminal=false<br />
+  Type=Application<br />
+  Categories=GNOME;Application;Development;<br />
+  StartupNotify=true</p>
+</li>
+</ul>
+</li>
+</ol>
+	</div><!-- /.entry-content -->        
+</section>
+				</section><!-- #content -->
+
+<section id="widgets" class="grid col-300 fit" >
+<section id="widget-image-1" class="widget-image">
+	<div class="widget" id="widget">
+		<a href="http://www.fedoraproject.org" target="_blank" alt="Fedora Project">
+		<img src="http://chinosoliard.github.io/images/widgets/widget-1.png">
+		</a>
+	</div>
+</section>
+	<!-- 	<section id="widget-search" class="widget-wrapper widget_search">
+		<form id="searchform" action="http://www.google.com/search" method="get">
+			<input id="q" class="field" type="text" placeholder="Search Blog" name="q" ></input>
+			<input id="ie" name="ie" type="hidden" value="utf-8" ></input>
+			<input id="oe" name="oe" type="hidden" value="utf-8" ></input>
+			<input id="channel" name="channel" type="hidden" value="suggest" ></input>
+			<input id="searchsubmit" class="submit" type="submit" value="">
+		</form>
+	</section>
+ -->
+
+<section id="widget-tagcloud" class="widget-wrapper widget_archive">
+	<div class="widget-title">
+		Tagcloud
+	</div>
+	<div>
+	</div>
+</section>
+ 
+<section id="widget-links" class="widget-wrapper widget_archive">
+	<div class="widget-title">
+		Links
+	</div>
+	<ul>
+		<li><a href="http://www.fedoraproject.org">Fedora Project</a></li>
+		<li><a href="http://www.lugparana.org">LUG Paraná (AR)</a></li>
+		<li><a href="http://www.python.org">Python</a></li>
+		<li><a href="http://www.sysarmy.com.ar">SysArmy</a></li>
+	</ul>
+</section>
+
+</section><!-- widgets -->
+	
+			</section><!-- /#wrapper -->
+
+	<footer id="footer" class="clearfix">
+		<div class="grid col-940" >
+        		<p>Theme responsive-cli-theme by <a href="http://www.chinosoliard.com">Chino Soliard</a></p>
+			<p>Powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a></p>
+		</div>
+	</footer>
+
+	</div>
+</body>
+</html>

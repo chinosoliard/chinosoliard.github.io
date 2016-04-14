@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+	<head>
+	<title>Chino Soliard</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" id="responsive-style-css"  href='/theme/css/style.css' type="text/css" media="all" />
+	<link rel="stylesheet" id="responsive-style-css"  href='/theme/css/highlight.css' type="text/css" media="all" />
+	<link href="http://chinosoliard.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Full Atom Feed" />
+
+
+
+
+	<link href="http://chinosoliard.github.io/feeds/fedora.atom.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Categories Atom Feed" />
+
+
+
+	</head>
+	<body id="index" class="blog">
+		<div id="container" class="hfeed">
+
+<header id="header" >
+		<h1>Chino Soliard</h1>
+		<h2>IT specialist | Technologies explorer | FOSS enthusiast | Fedora Contributor</h2>
+</header>    
+	
+<nav id="menu">
+	<a href="http://chinosoliard.github.io/index.html">$ ./Blog </a>
+	<a href="http://chinosoliard.github.io/archives.html">$ ./BlogHistory </a> 
+	<a href="http://chinosoliard.github.io/categories.html">$ ./CategoriesList</a>
+	
+	<a href="http://chinosoliard.github.io/pages/about-me.html">$ ./pages/AboutMe</a>
+	
+</nav> <!-- /#nav -->
+			<section id="wrapper" class="clearfix">
+
+				<section id="content" class="grid col-620" >
+						<section class="breadcrumbs-list">
+						</section>
+
+<section id="post" class="post hentry">
+	<header>
+		<h2 class="post-title" >Sincronizando archivos con UNISON en Fedora</h2>
+<p>
+###############
+</br>Date = <time datetime="2013-05-22" pubdate="pubdate">2013-05-22</time>
+</br>Category = <a href="http://chinosoliard.github.io/category/fedora.html">Fedora</a>
+</br>
+Tags = <a href="http://chinosoliard.github.io/tag/fedora.html">Fedora</a> <a href="http://chinosoliard.github.io/tag/gnulinux.html">GNU/Linux</a> <a href="http://chinosoliard.github.io/tag/local.html">Local</a> <a href="http://chinosoliard.github.io/tag/maintenance.html">maintenance</a> <a href="http://chinosoliard.github.io/tag/ssh.html">SSH</a> <a href="http://chinosoliard.github.io/tag/sync.html">Sync</a> <a href="http://chinosoliard.github.io/tag/synchronization.html">Synchronization</a> <a href="http://chinosoliard.github.io/tag/unison.html">UNISON</a></br>
+Lang = es </br>
+Translations:
+<a href="http://chinosoliard.github.io/blog/2013/may/synchronizing-files-unison-fedora-en.html">en</a>
+
+</br>###############
+</p>	</header>
+	<div class="post-entry">
+		<p><img alt="unison-logo" src="/images/article/2013/05/unison-logo.png" class="alignright">Yo almacenaba casi todos mis archivos en mi computadora de escritorio, otros archivos los tenía en mi notebook, que tenía menos espacio, y otros los sincronizaba automáticamente con Dropbox; Esto se terminó cuando cambie la notebook, y ahora ésta tiene más espacio que la computadora de escritorio, pero almacenar todo en la notebook es algo peligroso e inseguro, por lo cual, solo quiero que los datos estén en las 2 pc.</br>Hay diversas alternativas para realizar sincronizaciones automáticas (la mayoría pagas), en mi caso, decidí usar <a href="http://www.cis.upenn.edu/~bcpierce/unison/">UNISON</a>, una aplicación multiplataforma que permite realizar las sincronizaciones entre 2 anfitriones, o tambien entre 2 directorios locales.</br></br>Sincronizar, según la <a href="http://buscon.rae.es/drae/srv/search?id=EizugCEyTDXX2pMts9vl">Real Academia Española</a>, significa “Hacer que coincidan en el tiempo dos o más movimientos o fenómenos.”, por lo tanto, eso es exactamente lo que hace Unison, los cambios son propagados de forma bidireccional, es decir, archivos que estan en el host a y no estan en el host b, se copian, y viceversa; Además, compara las fechas de los archivos para detectar, obviamente, cual es más reciente.</br></br>Unison, como comenté anteriormente, permite hacer sincronizaciones entre directorios locales, y entre diferentes anfitriones utilizando <a href="http://es.wikipedia.org/wiki/Secure_Shell">SSH (Secure Shell)</a>, <a href="http://es.wikipedia.org/wiki/Rsh">RSH (Remote Shell)</a> y <a href="http://es.wikipedia.org/wiki/Socket_de_Internet">TCP (por Socket)</a>. Al ser SSH el metodo más seguro, es el que elegí para operar, y el que usaremos en esta sencilla guía.</p>
+        	<ol>
+<li>
+<p><strong>Instalamos UNISON</strong><br />
+  Unison se encuentra en los repositorios de Fedora, así que lo instalamos sencillamente con el siguiente comando:<br />
+<code>su -c ‘yum install unison’</code>  </p>
+</li>
+<li>
+<p><strong>Creamos el/los perfiles de sincronización</strong><br />
+  Unison trabaja por perfiles, los cuales configuramos para especificar cuales son los directorios a sincronizar.  </p>
+<ol>
+<li>
+<p>Lo ejecutamos, y, ahora no recuerdo bien si la primera vez fue así, pero creo que automáticamente se ejecutaba el asistente para agregar un perfil, si no es así, apretamos “Añadir” para iniciar el asistente de creación.  </p>
+</li>
+<li>
+<p>En la primer pantalla, que es solo una introducción, apretamos “Adelante”.<br />
+<a href="/images/article/2013/05/unison-1.png"><img alt="unison-1" src="/images/article/2013/05/unison-1.png" /></a>  </p>
+</li>
+<li>
+<p>A continuación, nos pide que completemos el nombre del perfil y una descripción del mismo. Completamos y le damos siguiente.<br />
+<a href="/images/article/2013/05/unison-2.png"><img alt="unison-2" src="/images/article/2013/05/unison-2.png" /></a>  </p>
+</li>
+<li>
+<p>Después, nos pide que seleccionemos el tipo de conexión, en donde podemos elegir Local, SSH, RSH y por conexión TCP.  </p>
+<ul>
+<li>
+<p><strong>Perfiles de sincronización en forma Local</strong>  </p>
+<ol>
+<li>
+<p>Seguimos los pasos que enumeramos anteriormente, seleccionamos “Local” de la lista de tipos de conexión y le damos “adelante”<br />
+<a href="/images/article/2013/05/unison-3.png"><img alt="unison-3" src="/images/article/2013/05/unison-3.png" /></a>  </p>
+</li>
+<li>
+<p>A continuación, deberemos detallar los directorios involucrados en la sincronización, lo hacemos y le damos a “Adelante”<br />
+<a href="/images/article/2013/05/unison-4.png"><img alt="unison-4" src="/images/article/2013/05/unison-4.png" /></a>  </p>
+</li>
+<li>
+<p>En mi caso, estoy por sincronizar directorios que estan en particiones NTFS, por lo tanto, activo el checkbox que configura el perfil para que trabaje sin utilizar los permisos que usa GNU/Linux<br />
+<a href="/images/article/2013/05/unison-5.png"><img alt="unison-5" src="/images/article/2013/05/unison-5.png" /></a>  </p>
+</li>
+<li>
+<p>Finalmente, Unison nos informa que terminamos de configurar el perfíl, y que apretemos “Aplicar” para crearlo.<br />
+<a href="/images/article/2013/05/unison-6.png"><img alt="unison-6" src="/images/article/2013/05/unison-6.png" /></a>  </p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Perfiles de sincronización en forma remota con SSH</strong>  </p>
+<ol>
+<li>
+<p>Seguimos los pasos que enumeramos anteriormente, seleccionamos “SSH” de la lista de tipos de conexión, el contenido de la ventana se extenderá, y ahora solicitará que le introduzcamos el host, que puede ser el nombre o la dirección IP del equipo al cual nos queremos conectar, y el nombre de usuario con el cual nos identificaremos en dicho equipo.<br />
+   Tambien, podemos activar un checkbox para que Unison comprima los archivos que se envían, como dice el software, es bueno para conexiones lentas, pero hace más lentas las conexiones rápidas.<br />
+   Luego de configurar esto, avanzamos<br />
+<a href="/images/article/2013/05/unison-7.png"><img alt="unison-7" src="/images/article/2013/05/unison-7.png" /></a>  </p>
+</li>
+<li>
+<p>A continuación, deberemos configurar los directorios que sincronizaremos. El local lo seleccionamos, el remoto debemos escribirlo, por lo cual, es necesario saber previamente el nombre del directorio. Pueden corroborarlo haciendo una conexión SSH por consola.<br />
+Después de esto, seguimos<br />
+<a href="/images/article/2013/05/unison-8.png"><img alt="unison-8" src="/images/article/2013/05/unison-8.png" /></a>  </p>
+</li>
+<li>
+<p>Al igual que en ejemplo anterior, en el que hacemos una sincronización de forma local, debemos configurar el perfil para trabajar con particiones NTFS o FAT, o mejor dicho, para que excluya el tratamiento de permisos de archivos que GNU/Linux utiliza. En mi caso, utilizo particiones NTFS en la sincronización, así que lo activo.<br />
+<a href="/images/article/2013/05/unison-9.png"><img alt="unison-9" src="/images/article/2013/05/unison-9.png" /></a>  </p>
+</li>
+<li>
+<p>A continuación, basta con apretar “Aplicar” y listo, ya terminamos de configurar el perfil para sincronizar directorios por SSH.<br />
+<a href="/images/article/2013/05/unison-10.png"><img alt="unison-10" src="/images/article/2013/05/unison-10.png" /></a>  </p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Realizamos una sincronización.</strong>  </p>
+<ol>
+<li>
+<p>Ejecutamos un perfil de sincronización, seleccionándolo de la lista y haciendo clic en “Abrir”.<br />
+<a href="/images/article/2013/05/unison-11.png"><img alt="unison-11" src="/images/article/2013/05/unison-11.png" /></a><br />
+<em>Al abrir uno de los perfiles creados para sincronizar por SSH, se nos pedirá una contraseña para iniciar la sesión.</em><br />
+<a href="/images/article/2013/05/unison-12.png"><img alt="unison-12" src="/images/article/2013/05/unison-12.png" /></a>  </p>
+</li>
+<li>
+<p>Cuando realizamos la sincronización por primera vez, se muestra una ventana como la siguiente, que explica que no existen archivos historicos de sincronizaciones, y que eso se debe a que, o no se han realizado sincronizaciones aún, o se actualizó la version de Unison y esta no reconoce los archivos historicos; Por lo cual, Unison asume que el archivo historico está completamente vacio.<br />
+<a href="/images/article/2013/05/unison-13.png"><img alt="unison-13" src="/images/article/2013/05/unison-13.png" /></a><br />
+<em>La primera vez que se realizan sincronizaciones, este proceso demora mucho.</em>  </p>
+</li>
+<li>
+<p>Finalizada la comparación, se muestra una lista, la cual ajustó automáticamente los cambios a realizar, los cuales podemos modificar.<br />
+  Revisamos bien los cambios que se van a realizar, podemos saltar cambios (“skip”, que pasa por alto la fila, no realiza cambios), y elegir el reemplazo y copiado en ambas direcciones.<br />
+<a href="/images/article/2013/05/unison-14.png"><img alt="unison-14" src="/images/article/2013/05/unison-14.png" /></a>  </p>
+</li>
+<li>
+<p>Una vez que controlamos los cambios a realizar, apretamos el botón “Go”, y comienza la sincronización.  </p>
+</li>
+<li>
+<p>Después de terminar de copiar los archivos, nos aparecerá una ventana informando que la sincronización finalizó, y un pequeño sumario, el cual podemos extender.<br />
+<a href="/images/article/2013/05/unison-15.png"><img alt="unison-15" src="/images/article/2013/05/unison-15.png" /></a>  </p>
+</li>
+</ol>
+</li>
+</ol>
+<p>Así de simple es utilizar Unison, luego de haber ejecutado por primera vez un perfil el punto 3.2 finaliza más rápido.<br />
+Un punto importante a tener en cuenta es que Unison debe estar instalado en ambos equipos, si es que se realiza la sincronización en forma remota.<br />
+En esta guía trabajamos con Unison GUI, es decir, con entorno gráfico, pero tambien se puede utilizar por consola (Estoy considerando utilizar Unison por linea de comandos en conjunto “cron”, para automátizar sincronizaciones y backups).  </p>
+<p>Espero les haya servido.  </p>
+<p>Saludos</p>
+	</div><!-- /.entry-content -->        
+</section>
+				</section><!-- #content -->
+
+<section id="widgets" class="grid col-300 fit" >
+<section id="widget-image-1" class="widget-image">
+	<div class="widget" id="widget">
+		<a href="http://www.fedoraproject.org" target="_blank" alt="Fedora Project">
+		<img src="http://chinosoliard.github.io/images/widgets/widget-1.png">
+		</a>
+	</div>
+</section>
+	<!-- 	<section id="widget-search" class="widget-wrapper widget_search">
+		<form id="searchform" action="http://www.google.com/search" method="get">
+			<input id="q" class="field" type="text" placeholder="Search Blog" name="q" ></input>
+			<input id="ie" name="ie" type="hidden" value="utf-8" ></input>
+			<input id="oe" name="oe" type="hidden" value="utf-8" ></input>
+			<input id="channel" name="channel" type="hidden" value="suggest" ></input>
+			<input id="searchsubmit" class="submit" type="submit" value="">
+		</form>
+	</section>
+ -->
+
+<section id="widget-tagcloud" class="widget-wrapper widget_archive">
+	<div class="widget-title">
+		Tagcloud
+	</div>
+	<div>
+	</div>
+</section>
+ 
+<section id="widget-links" class="widget-wrapper widget_archive">
+	<div class="widget-title">
+		Links
+	</div>
+	<ul>
+		<li><a href="http://www.fedoraproject.org">Fedora Project</a></li>
+		<li><a href="http://www.lugparana.org">LUG Paraná (AR)</a></li>
+		<li><a href="http://www.python.org">Python</a></li>
+		<li><a href="http://www.sysarmy.com.ar">SysArmy</a></li>
+	</ul>
+</section>
+
+</section><!-- widgets -->
+	
+			</section><!-- /#wrapper -->
+
+	<footer id="footer" class="clearfix">
+		<div class="grid col-940" >
+        		<p>Theme responsive-cli-theme by <a href="http://www.chinosoliard.com">Chino Soliard</a></p>
+			<p>Powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a></p>
+		</div>
+	</footer>
+
+	</div>
+</body>
+</html>

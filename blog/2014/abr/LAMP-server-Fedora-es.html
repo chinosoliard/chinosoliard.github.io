@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+	<head>
+	<title>Chino Soliard</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" id="responsive-style-css"  href='/theme/css/style.css' type="text/css" media="all" />
+	<link rel="stylesheet" id="responsive-style-css"  href='/theme/css/highlight.css' type="text/css" media="all" />
+	<link href="http://chinosoliard.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Full Atom Feed" />
+
+
+
+
+	<link href="http://chinosoliard.github.io/feeds/fedora.atom.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Categories Atom Feed" />
+
+
+
+	</head>
+	<body id="index" class="blog">
+		<div id="container" class="hfeed">
+
+<header id="header" >
+		<h1>Chino Soliard</h1>
+		<h2>IT specialist | Technologies explorer | FOSS enthusiast | Fedora Contributor</h2>
+</header>    
+	
+<nav id="menu">
+	<a href="http://chinosoliard.github.io/index.html">$ ./Blog </a>
+	<a href="http://chinosoliard.github.io/archives.html">$ ./BlogHistory </a> 
+	<a href="http://chinosoliard.github.io/categories.html">$ ./CategoriesList</a>
+	
+	<a href="http://chinosoliard.github.io/pages/about-me.html">$ ./pages/AboutMe</a>
+	
+</nav> <!-- /#nav -->
+			<section id="wrapper" class="clearfix">
+
+				<section id="content" class="grid col-620" >
+						<section class="breadcrumbs-list">
+						</section>
+
+<section id="post" class="post hentry">
+	<header>
+		<h2 class="post-title" >Servidor LAMP en Fedora</h2>
+<p>
+###############
+</br>Date = <time datetime="2014-04-03" pubdate="pubdate">2014-04-03</time>
+</br>Category = <a href="http://chinosoliard.github.io/category/fedora.html">Fedora</a>
+</br>
+Tags = <a href="http://chinosoliard.github.io/tag/apache.html">apache</a> <a href="http://chinosoliard.github.io/tag/fedora.html">Fedora</a> <a href="http://chinosoliard.github.io/tag/gnulinux.html">GNU/Linux</a> <a href="http://chinosoliard.github.io/tag/httpd.html">httpd</a> <a href="http://chinosoliard.github.io/tag/lamp.html">LAMP</a> <a href="http://chinosoliard.github.io/tag/mariadb.html">MariaDB</a> <a href="http://chinosoliard.github.io/tag/mod_php.html">mod_php</a> <a href="http://chinosoliard.github.io/tag/mysql.html">MySQL</a> <a href="http://chinosoliard.github.io/tag/perl.html">Perl</a> <a href="http://chinosoliard.github.io/tag/php.html">php</a> <a href="http://chinosoliard.github.io/tag/python.html">python</a> <a href="http://chinosoliard.github.io/tag/sql.html">sql</a> <a href="http://chinosoliard.github.io/tag/systemctl.html">systemctl</a> <a href="http://chinosoliard.github.io/tag/web.html">web</a></br>
+Lang = es </br>
+Translations:
+none
+
+</br>###############
+</p>	</header>
+	<div class="post-entry">
+		<p><a href="http://www.gugler.com.ar" target="_blank"><img alt="gugler" src="/images/static/gugler-150.png" class="alignright"></a>La semana pasada empecé (por 3ra vez) el curso de PHP nivel 1 en <a href="http://www.gugler.com.ar">GUGLER</a>, entonces, tengo que montar un servidor php en mis equipos para poder llevar a cabo las practicas.</br></br>Si bien <a href="https://www.apachefriends.org/es/index.html"><strong>XAMPP</strong></a> (X=Windows/Linux/Mac, A=Apache, M=MySQL, P=PHP, P=Perl) tiene disponible una versión para sistemas GNU/Linux, considero que es mejor instalar el software de los repositorios.</br></br><a href="http://www.fedoraproject.org" target="_blank"><img alt="fedora" src="/images/static/fedora-150.png" class="alignleft"></a><a href="http://es.wikipedia.org/wiki/LAMP"><strong>LAMP</strong></a> era la sigla de “Linux, Apache, MySQL and PHP”, pero, en la actualidad, LAMP tiene variantes en cuanto a la “P”, que puede ser tanto PHP, como Perl o Python, mismo caso para la “M”, que puede ser MySQL o MariaDB.</br></br>A continuación, los pasos a llevar a cabo para montar un servidor LAMP en nuestro Fedora</p>
+        	<ol>
+<li>
+<p><strong>Instalación</strong>  </p>
+<ol>
+<li>
+<p><strong>Apache Web Server</strong><br />
+<a href="http://www.apache.org/">Apache</a> es una fundación, pero el nombre Apache hace (directamente) referencia al servidor web HTTPd (Apache HyperText Transfer Protocol daemon). Instalarlo en Fedora no es para nada dificil, basta con ejecutar el siguiente comando en la consola:<br />
+<code># yum install httpd</code>  </p>
+</li>
+<li>
+<p><strong>MariaDB</strong><br />
+  En el caso de Fedora, MySQL fue reemplazado por MariaDB, tras la compra de MySQL por parte de Oracle, lo cual lo convirtió en un software de codigo abierto, en vez de software libre, como antes era. Al igual que al servidor web Apache, instalarlo es tan sencillo como ejecutar el siguiente comando:<br />
+<code># yum install mariadb-server</code>  </p>
+</li>
+<li>
+<p><strong>PHP (mod_php)</strong><br />
+  El servidor web Apache es modular, por lo que se pueden instalar los módulos que necesitemos (mod_python, mod_perl, mos_php, mod_ssl, etc.). En mi caso, que voy a trabajar con PHP, voy a instalar mod_php, con el comando siguiente:<br />
+<code># yum install php</code>  </p>
+</li>
+</ol>
+<p>Con estos tres simples pasos, tenemos instalado el software  necesario</p>
+</li>
+<li>
+<p><strong>Inicialización de los servicios</strong></p>
+<ol>
+<li>
+<p><strong>Apache Web Server</strong><br />
+  Para iniciar el servidor web apache, hacemos:<br />
+<code># systemctl start httpd.service</code>  </p>
+</li>
+<li>
+<p><strong>MariaDB</strong><br />
+  En el caso de MariaDB, ejecutamos:<br />
+<code># systemctl start mariadb.service</code>  </p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Configuración de los servicios y el sistema</strong>  </p>
+<ol>
+<li>
+<p><strong>Instalación segura de MariaDB</strong><br />
+  Este proceso:  </p>
+<ul>
+<li>Establece (Cambia) la contraseña de root (de MariaDB).  </li>
+<li>Elimina usuarios anónimos.  </li>
+<li>Deshabilita el login de root de forma remota.  </li>
+<li>Elimina la base de datos “test” y el acceso a ésta.  </li>
+<li>Carga nuevamente la tabla de privilegios.  </li>
+</ul>
+<p>Para ejecutar “MariaDB Secure Installation” corremos el comando:<br />
+<code># /usr/bin/mysql_secure_installation</code>  </p>
+</li>
+<li>
+<p><strong>Permisos del directorio de Apache</strong><br />
+  Al instala HTTPd, se crea el directorio <code>/var/www/html</code>, el cual contendrá el/los archivos del servidor web, con esto me refiero a que si ingresamos a <code>http://localhost/index.php</code> estaremos ingresando a <code>/var/www/html/index.php</code>.<br />
+  Si queremos añadir un archivo o editar alguno, necesitaremos permisos para ello, y apache también necesita acceso para poder “servir” los archivos; Entonces, debemos hacer que el directorio “/var/www/html” pertenezca al grupo “apache”, y a nuestro usuario, ésto se configura mediante los siguientes comandos:<br />
+<code># chown -R usuario /var/www/html/</code>  </p>
+<p><code># chgrp -R apache /var/www/html/</code>  </p>
+<p><code># chmod -R 750 /var/www/html/</code>  </p>
+<p><code># chmod g+s /var/www/</code>  </p>
+<p>Si Apache va a tener que escribir archivos en el directorio (por ejemplo: subir archivos), también tendremos que darle permisos de escritura a Apache, usando el siguiente comando, le daremos permiso a Apache para escribir en un directorio llamado “media” dentro de /var/www/html/<br />
+<code>#chmod g+w /var/www/html/media</code>  </p>
+</li>
+</ol>
+<p>Con esto ya estaríamos listo para trabajar.  </p>
+</li>
+<li>
+<p><strong>Configurando el inicio automático de los servicios</strong><br />
+  En el caso de que queramos que nuestro sistema funcione como servidor, resultaría tedioso iniciar los servicios manualmente cada vez que el equipo se apague, se corte la luz, o lo-que-sea, podemos hacer que los servicios se ejecuten automáticamente haciendo uso de los comandos:<br />
+  <code># systemctl enable mariadb.service</code></br><br />
+  <code># systemctl enable httpd.service</code></br>  <br />
+   Estos últimos 2 (dos) comandos hacen que inicien automáticamente al inicio del sistema MariaDB y Apache HTTP Server (respectivamente).  </p>
+</li>
+</ol>
+<p>Apache tiene muchísimas configuraciones, permite host virtuales, múltiples usuarios, y muchísimas cosas más; Acá solo muestro como hacer de nuestra pc una plataforma de desarrollo web, o, a lo sumo, un servidor muy simple.  </p>
+<p>Si buscan en internet pueden encontrar como hacer para alojar varios sitios en un solo equipo, o permitir que varios usuarios puedan editar diferentes sitios, es solo cuestión de buscar.  </p>
+<p>Espero les haya servido, saludos!</p>
+	</div><!-- /.entry-content -->        
+</section>
+				</section><!-- #content -->
+
+<section id="widgets" class="grid col-300 fit" >
+<section id="widget-image-1" class="widget-image">
+	<div class="widget" id="widget">
+		<a href="http://www.fedoraproject.org" target="_blank" alt="Fedora Project">
+		<img src="http://chinosoliard.github.io/images/widgets/widget-1.png">
+		</a>
+	</div>
+</section>
+	<!-- 	<section id="widget-search" class="widget-wrapper widget_search">
+		<form id="searchform" action="http://www.google.com/search" method="get">
+			<input id="q" class="field" type="text" placeholder="Search Blog" name="q" ></input>
+			<input id="ie" name="ie" type="hidden" value="utf-8" ></input>
+			<input id="oe" name="oe" type="hidden" value="utf-8" ></input>
+			<input id="channel" name="channel" type="hidden" value="suggest" ></input>
+			<input id="searchsubmit" class="submit" type="submit" value="">
+		</form>
+	</section>
+ -->
+
+<section id="widget-tagcloud" class="widget-wrapper widget_archive">
+	<div class="widget-title">
+		Tagcloud
+	</div>
+	<div>
+	</div>
+</section>
+ 
+<section id="widget-links" class="widget-wrapper widget_archive">
+	<div class="widget-title">
+		Links
+	</div>
+	<ul>
+		<li><a href="http://www.fedoraproject.org">Fedora Project</a></li>
+		<li><a href="http://www.lugparana.org">LUG Paraná (AR)</a></li>
+		<li><a href="http://www.python.org">Python</a></li>
+		<li><a href="http://www.sysarmy.com.ar">SysArmy</a></li>
+	</ul>
+</section>
+
+</section><!-- widgets -->
+	
+			</section><!-- /#wrapper -->
+
+	<footer id="footer" class="clearfix">
+		<div class="grid col-940" >
+        		<p>Theme responsive-cli-theme by <a href="http://www.chinosoliard.com">Chino Soliard</a></p>
+			<p>Powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a></p>
+		</div>
+	</footer>
+
+	</div>
+</body>
+</html>

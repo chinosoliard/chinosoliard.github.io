@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+	<head>
+	<title>Chino Soliard</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" id="responsive-style-css"  href='/theme/css/style.css' type="text/css" media="all" />
+	<link rel="stylesheet" id="responsive-style-css"  href='/theme/css/highlight.css' type="text/css" media="all" />
+	<link href="http://chinosoliard.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Full Atom Feed" />
+
+
+
+
+	<link href="http://chinosoliard.github.io/feeds/fedora.atom.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Categories Atom Feed" />
+
+
+
+	</head>
+	<body id="index" class="blog">
+		<div id="container" class="hfeed">
+
+<header id="header" >
+		<h1>Chino Soliard</h1>
+		<h2>IT specialist | Technologies explorer | FOSS enthusiast | Fedora Contributor</h2>
+</header>    
+	
+<nav id="menu">
+	<a href="http://chinosoliard.github.io/index.html">$ ./Blog </a>
+	<a href="http://chinosoliard.github.io/archives.html">$ ./BlogHistory </a> 
+	<a href="http://chinosoliard.github.io/categories.html">$ ./CategoriesList</a>
+	
+	<a href="http://chinosoliard.github.io/pages/about-me.html">$ ./pages/AboutMe</a>
+	
+</nav> <!-- /#nav -->
+			<section id="wrapper" class="clearfix">
+
+				<section id="content" class="grid col-620" >
+						<section class="breadcrumbs-list">
+						</section>
+
+<section id="post" class="post hentry">
+	<header>
+		<h2 class="post-title" >Samsung printers on Fedora</h2>
+<p>
+###############
+</br>Date = <time datetime="2012-10-21" pubdate="pubdate">2012-10-21</time>
+</br>Category = <a href="http://chinosoliard.github.io/category/fedora.html">Fedora</a>
+</br>
+Tags = <a href="http://chinosoliard.github.io/tag/clp-315.html">CLP-315</a> <a href="http://chinosoliard.github.io/tag/cups.html">CUPS</a> <a href="http://chinosoliard.github.io/tag/fedora.html">Fedora</a> <a href="http://chinosoliard.github.io/tag/gnulinux.html">GNU/Linux</a> <a href="http://chinosoliard.github.io/tag/printer.html">printer</a> <a href="http://chinosoliard.github.io/tag/ml-1640.html">ML-1640</a> <a href="http://chinosoliard.github.io/tag/samsung.html">samsung</a> <a href="http://chinosoliard.github.io/tag/samsung-unified-linux-driver.html">Samsung Unified Linux Driver</a> <a href="http://chinosoliard.github.io/tag/splix.html">SPLIX</a></br>
+Lang = en </br>
+Translations:
+<a href="http://chinosoliard.github.io/blog/2012/oct/samsung-printer-on-fedora-es.html">es</a>
+
+</br>###############
+</p>	</header>
+	<div class="post-entry">
+		<p>I have 2 Samsung laser printers since 2 years ago, a <a href="http://www.samsung.com/es/consumer/pc-peripherals-printer/printers/laser-monocrome-printers/ML-1640/SEE">ML-1640</a> and a <a href="http://www.samsung.com/es/business/printer/productos-y-soluciones/impresoras-y-faxes/impresoras-l%C3%A1ser-color/clp-310-/impresora-l%C3%A1ser-color-clp-315/feature.prt?printerCode=CLP-315/SEE">CLP-315</a>. Honestly, I never spent too much time to make them work in GNU/Linux, when I try to do it, only with <a href="http://www.cups.org/">CUPS</a>, I couldn’t do it. Now, that I’m using <a href="http://www.fedoraproject.org/es/">Fedora</a> 99,9% of the time that I’m sitting at a computer, I had to find the way to make them work. After ask a question in <a href="http://ask.fedoraproject.org">ask.fedoraproject.org</a>, I recieved 2 answers, one of which worked.</p>
+        	<p>The first (and no functional) option was install the <a href="http://downloadcenter.samsung.com/content/DR/200911/20091118145015140/UnifiedLinuxDriver_1.01.tar.gz">Samsung Unified Linux Drivers</a>, I executed the installer with “$ sudo” and start the installation. During the installation, it’s possible installing printers, I plug the ML-1640, and everything looks to be right. When I finished the installation, I go to CUPS page (<a href="http://localhost:631/">http://localhost:631</a>) and the printer were on the list. Among many details that I can’t remember, all I know is that the printer never worked, I searched the Internet and found that the package was very problematic, then I want to uninstall the package, for this, in a console run $ sudo / opt / Samsung / mfp / uninstall / guiuninstall, this will start the uninstallation. After a few steps, the program did not leave traces (or it seems).</p>
+<p>The second (and functional), and simpler, is installing Splix, a set of CUPS drivers that handle SPL (Samsung Printer Language). Following, I explain how I did.</p>
+<ol>
+<li>
+<p>Now is packaged for Fedora, so, all you have to do to install the package is run in a console 
+  <code>$ sudo yum install splix</code></p>
+</li>
+<li>
+<ol>
+<li>After installing Splix, just connect the printer (windows appear to install drivers, but cancel) and go to CUPS (http://localhost:631), once in CUPS, we go to Administration, and then to “Add printer “.</li>
+</ol>
+</li>
+<li>
+<p>The printer appears connected in the list of local printers, select it and press “next”. 
+<a href="/images/article/2012/10/samsung-printer-on-fedora-1.png"><img alt="samsung-printer-on-fedora-1" src="/images/article/2012/10/samsung-printer-on-fedora-1.png" /></a></p>
+</li>
+<li>
+<p>After, configurations for printer name, description, location, and the option of sharing appears; We click on “next” (after set the fields to taste).
+<a href="/images/article/2012/10/samsung-printer-on-fedora-2.png"><img alt="samsung-printer-on-fedora-2" src="/images/article/2012/10/samsung-printer-on-fedora-2.png" /></a></p>
+</li>
+<li>
+<p>We got to the step where we define the controller, in the list “Model” select the model you are installing, then “Add Printer”.
+<a href="/images/article/2012/10/samsung-printer-on-fedora-3.png"><img alt="samsung-printer-on-fedora-3" src="/images/article/2012/10/samsung-printer-on-fedora-3.png" /></a></p>
+</li>
+<li>
+<p>Finally, we are asked to establish the default options for the printer
+<a href="/images/article/2012/10/samsung-printer-on-fedora-4.png"><img alt="samsung-printer-on-fedora-4" src="/images/article/2012/10/samsung-printer-on-fedora-4.png" /></a></p>
+</li>
+<li>
+<p>Once we are in the printer’s page in CUPS, we can test the printer selecting “Print Test Page” in the “Maintenance” menu.
+<a href="/images/article/2012/10/samsung-printer-on-fedora-5.png"><img alt="samsung-printer-on-fedora-5" src="/images/article/2012/10/samsung-printer-on-fedora-5.png" /></a></p>
+</li>
+</ol>
+<p>The printer is working, but, to me personally, four printers appear installed on the CUPS printer list, so I removed the ones I didn’t install (detected by the name).
+<a href="/images/article/2012/10/samsung-printer-on-fedora-6.png"><img alt="samsung-printer-on-fedora-6" src="/images/article/2012/10/samsung-printer-on-fedora-6.png" /></a></p>
+<p>Well, that’s the simply way to install the printers, I hope you have been useful.</p>
+	</div><!-- /.entry-content -->        
+</section>
+				</section><!-- #content -->
+
+<section id="widgets" class="grid col-300 fit" >
+<section id="widget-image-1" class="widget-image">
+	<div class="widget" id="widget">
+		<a href="http://www.fedoraproject.org" target="_blank" alt="Fedora Project">
+		<img src="http://chinosoliard.github.io/images/widgets/widget-1.png">
+		</a>
+	</div>
+</section>
+	<!-- 	<section id="widget-search" class="widget-wrapper widget_search">
+		<form id="searchform" action="http://www.google.com/search" method="get">
+			<input id="q" class="field" type="text" placeholder="Search Blog" name="q" ></input>
+			<input id="ie" name="ie" type="hidden" value="utf-8" ></input>
+			<input id="oe" name="oe" type="hidden" value="utf-8" ></input>
+			<input id="channel" name="channel" type="hidden" value="suggest" ></input>
+			<input id="searchsubmit" class="submit" type="submit" value="">
+		</form>
+	</section>
+ -->
+
+<section id="widget-tagcloud" class="widget-wrapper widget_archive">
+	<div class="widget-title">
+		Tagcloud
+	</div>
+	<div>
+	</div>
+</section>
+ 
+<section id="widget-links" class="widget-wrapper widget_archive">
+	<div class="widget-title">
+		Links
+	</div>
+	<ul>
+		<li><a href="http://www.fedoraproject.org">Fedora Project</a></li>
+		<li><a href="http://www.lugparana.org">LUG Paraná (AR)</a></li>
+		<li><a href="http://www.python.org">Python</a></li>
+		<li><a href="http://www.sysarmy.com.ar">SysArmy</a></li>
+	</ul>
+</section>
+
+</section><!-- widgets -->
+	
+			</section><!-- /#wrapper -->
+
+	<footer id="footer" class="clearfix">
+		<div class="grid col-940" >
+        		<p>Theme responsive-cli-theme by <a href="http://www.chinosoliard.com">Chino Soliard</a></p>
+			<p>Powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a></p>
+		</div>
+	</footer>
+
+	</div>
+</body>
+</html>

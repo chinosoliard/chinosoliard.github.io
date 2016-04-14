@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+	<head>
+	<title>Chino Soliard</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" id="responsive-style-css"  href='/theme/css/style.css' type="text/css" media="all" />
+	<link rel="stylesheet" id="responsive-style-css"  href='/theme/css/highlight.css' type="text/css" media="all" />
+	<link href="http://chinosoliard.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Full Atom Feed" />
+
+
+
+
+	<link href="http://chinosoliard.github.io/feeds/smartphones.atom.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Categories Atom Feed" />
+
+
+
+	</head>
+	<body id="index" class="blog">
+		<div id="container" class="hfeed">
+
+<header id="header" >
+		<h1>Chino Soliard</h1>
+		<h2>IT specialist | Technologies explorer | FOSS enthusiast | Fedora Contributor</h2>
+</header>    
+	
+<nav id="menu">
+	<a href="http://chinosoliard.github.io/index.html">$ ./Blog </a>
+	<a href="http://chinosoliard.github.io/archives.html">$ ./BlogHistory </a> 
+	<a href="http://chinosoliard.github.io/categories.html">$ ./CategoriesList</a>
+	
+	<a href="http://chinosoliard.github.io/pages/about-me.html">$ ./pages/AboutMe</a>
+	
+</nav> <!-- /#nav -->
+			<section id="wrapper" class="clearfix">
+
+				<section id="content" class="grid col-620" >
+						<section class="breadcrumbs-list">
+						</section>
+
+<section id="post" class="post hentry">
+	<header>
+		<h2 class="post-title" >Actualizar Sony Ericsson Xperia Neo V con Ice Cream Sandwich OFICIAL</h2>
+<p>
+###############
+</br>Date = <time datetime="2012-11-17" pubdate="pubdate">2012-11-17</time>
+</br>Category = <a href="http://chinosoliard.github.io/category/smartphones.html">Smartphones</a>
+</br>
+Tags = <a href="http://chinosoliard.github.io/tag/android.html">Android</a> <a href="http://chinosoliard.github.io/tag/firmware.html">firmware</a> <a href="http://chinosoliard.github.io/tag/flashtool.html">flashtool</a> <a href="http://chinosoliard.github.io/tag/gingerbread.html">Gingerbread</a> <a href="http://chinosoliard.github.io/tag/ice-cream-sandwich.html">Ice Cream Sandwich</a> <a href="http://chinosoliard.github.io/tag/ics.html">ICS</a> <a href="http://chinosoliard.github.io/tag/neo-v.html">Neo V</a> <a href="http://chinosoliard.github.io/tag/sony-ericsson.html">Sony Ericsson</a> <a href="http://chinosoliard.github.io/tag/xperia.html">Xperia</a></br>
+Lang = es </br>
+Translations:
+none
+
+</br>###############
+</p>	</header>
+	<div class="post-entry">
+		<p>Hace un par de días, tras la ruptura de mi Motorola Milestone, decidí comprarme un teléfono nuevo. Un amigo me había mostrado el Sony Ericsson Xperia Neo V, el cual parecía tener muy buenas prestaciones en relación a su costo; Apenas conseguí la plata me lo compré. Como este post no está dedicado a cubrir lo que es el celular, voy directamente al tema.</br></br>El celular trajo Android Gingerbread 2.3.4, anda bien, pero yo estaba acostumbrado al CyanogenMod que tenía en mi Milestone, con Android Gingerbread 2.3.7; Entonces, me puse a averiguar como actualizar a una versión más moderna y funcional de Android.</br></br>Con los pasos que describo a continuación, conseguí instalarle un firmware OFICIAL DE SONY con Android Ice Cream Sandwich 4.0.4.</p>
+        	<p><img alt="NeoVAndroid404" src="/images/article/2012/11/NeoVLogoyAndroid404.jpg" /></p>
+<p><strong>ADVERTENCIA: SE BORRAN TODOS LOS DATOS QUE HAY EN EL TELÉFONO, DEJA EL TELÉFONO COMO NUEVO. Lo unico que no borra son los datos de la tarjeta MicroSD.</strong>  </p>
+<ol>
+<li>
+<p><strong>Descargamos lo necesario para realizar la actualización.</strong>  </p>
+<ul>
+<li>
+<p>Firmware 4.1.B.0.587 (Tenémos que descargar la versión acorde a nuestra ubicación)<br />
+a = american | i = international</p>
+<ul>
+<li><a href="http://adf.ly/deDZU">MT11a 4.1.B.0.587 US, CDF-1254-9468i</a>  </li>
+<li><a href="http://adf.ly/deDZU">MT11i 4.1.B.0.587 NCB, Nordic, CDF-1255-1755, SI-1254-9263</a>  </li>
+<li><a href="http://adf.ly/deDch">MT11i 4.1.B.0.587 India CDF-1254-8478, SI-1254-8966</a>  </li>
+<li><a href="http://adf.ly/deDeF">MT11i 4.1.B.0.587 Central Europe 1, CDF-1254-9708</a>  </li>
+<li><a href="http://adf.ly/deDft">MT15i 4.1.B.0.587 NCB, Nordic, CDF-1247-0875</a>  </li>
+</ul>
+</li>
+<li>
+<p>Flashtool (ultima versión disponible)  </p>
+<ul>
+<li><a href="http://adf.ly/uUJeV">Flashtool — Xperia devices flashing</a>  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Instalamos Flashtool y los drivers correspondientes</strong>  </p>
+<ul>
+<li>Instalamos Flashtool, corriendo el ejecutable y siguiendo los pasos de instalación.  </li>
+<li>Una vez finalizada la instalación, nos dirigimos a la carpeta donde se instaló Flashtool (Por ejemplo: “C:\Flashtool”).  </li>
+<li>Dentro de la carpeta de Flashtool, acccedemos a la carpeta “drivers”, y ejecutamos el *.exe que se encuentre en ese directorio (“Flashtool-drivers.exe”, en este caso).  </li>
+<li>En la lista de controladores, elegimos los siguientes:  <ul>
+<li>Sony Ericsson Xperia arc, Xperia Neo, Xperia PLAY, Xperia acro IS11S, Xperia acro SO-2C drivers  </li>
+<li>Flashmode Drivers  </li>
+<li>Fastboot Drivers  </li>
+</ul>
+</li>
+</ul>
+<p>... y finalizamos la instalación.</p>
+</li>
+<li>
+<p><strong>Copiamos</strong> el archivo *.tft (firmware) al directorio “firmwares” dentro del directorio de instalación de Flashtool.  </p>
+</li>
+<li>
+<p><strong>Ejecutamos Flashtool</strong>, y hacemos click en el trueno, seleccionamos “Flashmode” y le damos OK.<br />
+<img alt="flash-tool" src="/images/article/2012/11/flashtool-flashmode.png" /></p>
+</li>
+<li>
+<p>En la lista de Firmwares que apareció, <strong>seleccionamos</strong> la que corresponde (MT11i, por ejemplo), y le damos OK.  </p>
+</li>
+<li>
+<p>Nos aparece un cartel que dice que <strong>desconectemos y apaguemos el teléfono</strong>, que apretemos y mantengamos apretado el botón “volver” (la flechita para atras) y conectemos el cable. <strong>NO SOLTAR LA TECLA HASTA QUE TERMINE EL PROCESO</strong>.  </p>
+</li>
+<li>
+<p><strong>Comienza la instalación de los drivers</strong>, puede ser que además de los drivers que instalamos, Windows necesite descargar algunos (automáticamente) de internet.  </p>
+</li>
+<li>
+<p>Una vez finalizada la instalación de los drivers, Flashtool comienza a hacer su trabajo, tenemos que <strong>esperar a que termine</strong>, y dice que prendamos el dispositivo.  </p>
+</li>
+<li>
+<p><strong>Prendemos el dispositivo</strong>, y listo, ya está actualizado el firmware.</p>
+</li>
+</ol>
+	</div><!-- /.entry-content -->        
+</section>
+				</section><!-- #content -->
+
+<section id="widgets" class="grid col-300 fit" >
+<section id="widget-image-1" class="widget-image">
+	<div class="widget" id="widget">
+		<a href="http://www.fedoraproject.org" target="_blank" alt="Fedora Project">
+		<img src="http://chinosoliard.github.io/images/widgets/widget-1.png">
+		</a>
+	</div>
+</section>
+	<!-- 	<section id="widget-search" class="widget-wrapper widget_search">
+		<form id="searchform" action="http://www.google.com/search" method="get">
+			<input id="q" class="field" type="text" placeholder="Search Blog" name="q" ></input>
+			<input id="ie" name="ie" type="hidden" value="utf-8" ></input>
+			<input id="oe" name="oe" type="hidden" value="utf-8" ></input>
+			<input id="channel" name="channel" type="hidden" value="suggest" ></input>
+			<input id="searchsubmit" class="submit" type="submit" value="">
+		</form>
+	</section>
+ -->
+
+<section id="widget-tagcloud" class="widget-wrapper widget_archive">
+	<div class="widget-title">
+		Tagcloud
+	</div>
+	<div>
+	</div>
+</section>
+ 
+<section id="widget-links" class="widget-wrapper widget_archive">
+	<div class="widget-title">
+		Links
+	</div>
+	<ul>
+		<li><a href="http://www.fedoraproject.org">Fedora Project</a></li>
+		<li><a href="http://www.lugparana.org">LUG Paraná (AR)</a></li>
+		<li><a href="http://www.python.org">Python</a></li>
+		<li><a href="http://www.sysarmy.com.ar">SysArmy</a></li>
+	</ul>
+</section>
+
+</section><!-- widgets -->
+	
+			</section><!-- /#wrapper -->
+
+	<footer id="footer" class="clearfix">
+		<div class="grid col-940" >
+        		<p>Theme responsive-cli-theme by <a href="http://www.chinosoliard.com">Chino Soliard</a></p>
+			<p>Powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a></p>
+		</div>
+	</footer>
+
+	</div>
+</body>
+</html>
