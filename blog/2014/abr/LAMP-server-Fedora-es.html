@@ -6,16 +6,13 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 	<link rel="stylesheet" id="responsive-style-css"  href='/theme/css/style.css' type="text/css" media="all" />
-	<link href="feeds//feeds/atom/all.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Full Atom Feed" />
+	<link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Full Atom Feed" />
 
 
-	<link href="feeds//feeds/atom/feed.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Atom Feed" />
 
-	<link href="feeds//feeds/rss/feed.xml" type="application/rss+xml" rel="alternate" title="Chino Soliard RSS Feed" />
 
-	<link href="feeds//feeds/atom/category-fedora.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Categories Atom Feed" />
+	<link href="/feeds/fedora.atom.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Categories Atom Feed" />
 
-	<link href="feeds//feeds/rss/category-fedora.xml" type="application/rss+xml" rel="alternate" title="Chino Soliard Categories RSS Feed" />
 
 
 	</head>
@@ -24,15 +21,15 @@
 
 <header id="header" >
 		<h1>Chino Soliard</h1>
-		<h2>IT specialist | Technologies explorer | FOSS enthusiast | Fedora Contributor</h2>
+		<h2>IT specialist | FOSS enthusiast | Fedora Contributor</h2>
 </header>    
 	
 <nav id="menu">
-	<a href="http://www.chinosoliard.com/index.html">$ ./Blog </a>
-	<a href="http://www.chinosoliard.com/archives.html">$ ./BlogHistory </a> 
-	<a href="http://www.chinosoliard.com/categories.html">$ ./CategoriesList</a>
+	<a href="/index.html">$ ./Blog </a>
+	<a href="/archives.html">$ ./BlogHistory </a> 
+	<a href="/categories.html">$ ./CategoriesList</a>
 	
-	<a href="http://www.chinosoliard.com/pages/about-me.html">$ ./pages/AboutMe</a>
+	<a  href="/pages/about-me.html">$ ./pages/AboutMe</a>
 	
 </nav> <!-- /#nav -->
 			<section id="wrapper" class="clearfix">
@@ -44,9 +41,9 @@
 <p>
 ###############
 </br>Date = <time datetime="2014-04-03" pubdate="pubdate">2014-04-03</time>
-</br>Category = <a href="http://www.chinosoliard.com/category/fedora.html">Fedora</a>
+</br>Category = <a href="/category/fedora.html">Fedora</a>
 </br>
-Tags = <a href="http://www.chinosoliard.com/tag/apache.html">apache</a> <a href="http://www.chinosoliard.com/tag/fedora.html">Fedora</a> <a href="http://www.chinosoliard.com/tag/gnulinux.html">GNU/Linux</a> <a href="http://www.chinosoliard.com/tag/httpd.html">httpd</a> <a href="http://www.chinosoliard.com/tag/lamp.html">LAMP</a> <a href="http://www.chinosoliard.com/tag/mariadb.html">MariaDB</a> <a href="http://www.chinosoliard.com/tag/mod_php.html">mod_php</a> <a href="http://www.chinosoliard.com/tag/mysql.html">MySQL</a> <a href="http://www.chinosoliard.com/tag/perl.html">Perl</a> <a href="http://www.chinosoliard.com/tag/php.html">php</a> <a href="http://www.chinosoliard.com/tag/python.html">python</a> <a href="http://www.chinosoliard.com/tag/sql.html">sql</a> <a href="http://www.chinosoliard.com/tag/systemctl.html">systemctl</a> <a href="http://www.chinosoliard.com/tag/web.html">web</a></br>
+Tags = <a href="/tag/apache.html">apache</a> <a href="/tag/fedora.html">Fedora</a> <a href="/tag/gnulinux.html">GNU/Linux</a> <a href="/tag/httpd.html">httpd</a> <a href="/tag/lamp.html">LAMP</a> <a href="/tag/mariadb.html">MariaDB</a> <a href="/tag/mod_php.html">mod_php</a> <a href="/tag/mysql.html">MySQL</a> <a href="/tag/perl.html">Perl</a> <a href="/tag/php.html">php</a> <a href="/tag/python.html">python</a> <a href="/tag/sql.html">sql</a> <a href="/tag/systemctl.html">systemctl</a> <a href="/tag/web.html">web</a></br>
 Lang = es </br>
 Translations:
 none
@@ -61,18 +58,18 @@ none
 <p><strong>Instalación</strong>  </p>
 <ol>
 <li>
-<p><strong>Apache Web Server</strong><br />
-<a href="http://www.apache.org/">Apache</a> es una fundación, pero el nombre Apache hace (directamente) referencia al servidor web HTTPd (Apache HyperText Transfer Protocol daemon). Instalarlo en Fedora no es para nada dificil, basta con ejecutar el siguiente comando en la consola:<br />
+<p><strong>Apache Web Server</strong><br>
+<a href="http://www.apache.org/">Apache</a> es una fundación, pero el nombre Apache hace (directamente) referencia al servidor web HTTPd (Apache HyperText Transfer Protocol daemon). Instalarlo en Fedora no es para nada dificil, basta con ejecutar el siguiente comando en la consola:<br>
 <code># yum install httpd</code>  </p>
 </li>
 <li>
-<p><strong>MariaDB</strong><br />
-  En el caso de Fedora, MySQL fue reemplazado por MariaDB, tras la compra de MySQL por parte de Oracle, lo cual lo convirtió en un software de codigo abierto, en vez de software libre, como antes era. Al igual que al servidor web Apache, instalarlo es tan sencillo como ejecutar el siguiente comando:<br />
+<p><strong>MariaDB</strong><br>
+  En el caso de Fedora, MySQL fue reemplazado por MariaDB, tras la compra de MySQL por parte de Oracle, lo cual lo convirtió en un software de codigo abierto, en vez de software libre, como antes era. Al igual que al servidor web Apache, instalarlo es tan sencillo como ejecutar el siguiente comando:<br>
 <code># yum install mariadb-server</code>  </p>
 </li>
 <li>
-<p><strong>PHP (mod_php)</strong><br />
-  El servidor web Apache es modular, por lo que se pueden instalar los módulos que necesitemos (mod_python, mod_perl, mos_php, mod_ssl, etc.). En mi caso, que voy a trabajar con PHP, voy a instalar mod_php, con el comando siguiente:<br />
+<p><strong>PHP (mod_php)</strong><br>
+  El servidor web Apache es modular, por lo que se pueden instalar los módulos que necesitemos (mod_python, mod_perl, mos_php, mod_ssl, etc.). En mi caso, que voy a trabajar con PHP, voy a instalar mod_php, con el comando siguiente:<br>
 <code># yum install php</code>  </p>
 </li>
 </ol>
@@ -82,13 +79,13 @@ none
 <p><strong>Inicialización de los servicios</strong></p>
 <ol>
 <li>
-<p><strong>Apache Web Server</strong><br />
-  Para iniciar el servidor web apache, hacemos:<br />
+<p><strong>Apache Web Server</strong><br>
+  Para iniciar el servidor web apache, hacemos:<br>
 <code># systemctl start httpd.service</code>  </p>
 </li>
 <li>
-<p><strong>MariaDB</strong><br />
-  En el caso de MariaDB, ejecutamos:<br />
+<p><strong>MariaDB</strong><br>
+  En el caso de MariaDB, ejecutamos:<br>
 <code># systemctl start mariadb.service</code>  </p>
 </li>
 </ol>
@@ -97,7 +94,7 @@ none
 <p><strong>Configuración de los servicios y el sistema</strong>  </p>
 <ol>
 <li>
-<p><strong>Instalación segura de MariaDB</strong><br />
+<p><strong>Instalación segura de MariaDB</strong><br>
   Este proceso:  </p>
 <ul>
 <li>Establece (Cambia) la contraseña de root (de MariaDB).  </li>
@@ -106,28 +103,28 @@ none
 <li>Elimina la base de datos “test” y el acceso a ésta.  </li>
 <li>Carga nuevamente la tabla de privilegios.  </li>
 </ul>
-<p>Para ejecutar “MariaDB Secure Installation” corremos el comando:<br />
+<p>Para ejecutar “MariaDB Secure Installation” corremos el comando:<br>
 <code># /usr/bin/mysql_secure_installation</code>  </p>
 </li>
 <li>
-<p><strong>Permisos del directorio de Apache</strong><br />
-  Al instala HTTPd, se crea el directorio <code>/var/www/html</code>, el cual contendrá el/los archivos del servidor web, con esto me refiero a que si ingresamos a <code>http://localhost/index.php</code> estaremos ingresando a <code>/var/www/html/index.php</code>.<br />
-  Si queremos añadir un archivo o editar alguno, necesitaremos permisos para ello, y apache también necesita acceso para poder “servir” los archivos; Entonces, debemos hacer que el directorio “/var/www/html” pertenezca al grupo “apache”, y a nuestro usuario, ésto se configura mediante los siguientes comandos:<br />
+<p><strong>Permisos del directorio de Apache</strong><br>
+  Al instala HTTPd, se crea el directorio <code>/var/www/html</code>, el cual contendrá el/los archivos del servidor web, con esto me refiero a que si ingresamos a <code>http://localhost/index.php</code> estaremos ingresando a <code>/var/www/html/index.php</code>.<br>
+  Si queremos añadir un archivo o editar alguno, necesitaremos permisos para ello, y apache también necesita acceso para poder “servir” los archivos; Entonces, debemos hacer que el directorio “/var/www/html” pertenezca al grupo “apache”, y a nuestro usuario, ésto se configura mediante los siguientes comandos:<br>
 <code># chown -R usuario /var/www/html/</code>  </p>
 <p><code># chgrp -R apache /var/www/html/</code>  </p>
 <p><code># chmod -R 750 /var/www/html/</code>  </p>
 <p><code># chmod g+s /var/www/</code>  </p>
-<p>Si Apache va a tener que escribir archivos en el directorio (por ejemplo: subir archivos), también tendremos que darle permisos de escritura a Apache, usando el siguiente comando, le daremos permiso a Apache para escribir en un directorio llamado “media” dentro de /var/www/html/<br />
+<p>Si Apache va a tener que escribir archivos en el directorio (por ejemplo: subir archivos), también tendremos que darle permisos de escritura a Apache, usando el siguiente comando, le daremos permiso a Apache para escribir en un directorio llamado “media” dentro de /var/www/html/<br>
 <code>#chmod g+w /var/www/html/media</code>  </p>
 </li>
 </ol>
 <p>Con esto ya estaríamos listo para trabajar.  </p>
 </li>
 <li>
-<p><strong>Configurando el inicio automático de los servicios</strong><br />
-  En el caso de que queramos que nuestro sistema funcione como servidor, resultaría tedioso iniciar los servicios manualmente cada vez que el equipo se apague, se corte la luz, o lo-que-sea, podemos hacer que los servicios se ejecuten automáticamente haciendo uso de los comandos:<br />
-  <code># systemctl enable mariadb.service</code></br><br />
-  <code># systemctl enable httpd.service</code></br>  <br />
+<p><strong>Configurando el inicio automático de los servicios</strong><br>
+  En el caso de que queramos que nuestro sistema funcione como servidor, resultaría tedioso iniciar los servicios manualmente cada vez que el equipo se apague, se corte la luz, o lo-que-sea, podemos hacer que los servicios se ejecuten automáticamente haciendo uso de los comandos:<br>
+  <code># systemctl enable mariadb.service</code></br><br>
+  <code># systemctl enable httpd.service</code></br>  <br>
    Estos últimos 2 (dos) comandos hacen que inicien automáticamente al inicio del sistema MariaDB y Apache HTTP Server (respectivamente).  </p>
 </li>
 </ol>
@@ -141,7 +138,7 @@ none
 <section id="widgets" class="grid col-300 fit" >
 <section id="widget-image-1" class="widget-image">
 	<div class="widget" id="widget">
-		<a href="http://www.fedoraproject.org" target="_blank" alt="Fedora Project">		<img src="http://www.chinosoliard.com/images/widgets/fedora.png">
+		<a href="http://www.fedoraproject.org" target="_blank" alt="Fedora Project">		<img src="/images/widgets/fedora.png">
 </a>	</div>
 </section>
 
@@ -163,52 +160,52 @@ none
 	<div>
 		<ul class="tagcloud">
         <li class="tag-1">
-            <a href="http://www.chinosoliard.com/tag/gnulinux.html">
+            <a href="/tag/gnulinux.html">
             GNU/Linux
             </a>
         </li>
         <li class="tag-1">
-            <a href="http://www.chinosoliard.com/tag/fedora.html">
+            <a href="/tag/fedora.html">
             Fedora
             </a>
         </li>
         <li class="tag-1">
-            <a href="http://www.chinosoliard.com/tag/event.html">
+            <a href="/tag/event.html">
             event
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/android.html">
+            <a href="/tag/android.html">
             Android
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/parana.html">
+            <a href="/tag/parana.html">
             Paraná
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/flisol.html">
+            <a href="/tag/flisol.html">
             FLISOL
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/lugparana.html">
+            <a href="/tag/lugparana.html">
             LugParana
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/ice-cream-sandwich.html">
+            <a href="/tag/ice-cream-sandwich.html">
             Ice Cream Sandwich
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/sony-ericsson.html">
+            <a href="/tag/sony-ericsson.html">
             Sony Ericsson
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/ics.html">
+            <a href="/tag/ics.html">
             ICS
             </a>
         </li>
@@ -218,7 +215,7 @@ none
 	
 <section id="widget-image-2" class="widget-image">
 	<div class="widget" id="widget">
-		<a href="http://www.lugparana.org" target="_blank" alt="Linux User Group Paraná (Argentina)">		<img src="http://www.chinosoliard.com/images/widgets/lugparana.png">
+		<a href="http://www.lugparana.org" target="_blank" alt="Linux User Group Paraná (Argentina)">		<img src="/images/widgets/lugparana.png">
 </a>	</div>
 </section>
  
@@ -236,7 +233,7 @@ none
 
 <section id="widget-image-3" class="widget-image">
 	<div class="widget" id="widget">
-		<a href="http://sysarmy.com.ar/" target="_blank" alt="sysarmy - El soporte de los que dan soporte">		<img src="http://www.chinosoliard.com/images/widgets/sysarmy.png">
+		<a href="http://sysarmy.com.ar/" target="_blank" alt="sysarmy - El soporte de los que dan soporte">		<img src="/images/widgets/sysarmy.png">
 </a>	</div>
 </section>
 </section><!-- widgets -->

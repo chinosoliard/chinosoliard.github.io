@@ -6,16 +6,13 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 	<link rel="stylesheet" id="responsive-style-css"  href='/theme/css/style.css' type="text/css" media="all" />
-	<link href="feeds//feeds/atom/all.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Full Atom Feed" />
+	<link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Full Atom Feed" />
 
 
-	<link href="feeds//feeds/atom/feed.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Atom Feed" />
 
-	<link href="feeds//feeds/rss/feed.xml" type="application/rss+xml" rel="alternate" title="Chino Soliard RSS Feed" />
 
-	<link href="feeds//feeds/atom/category-fedora.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Categories Atom Feed" />
+	<link href="/feeds/fedora.atom.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Categories Atom Feed" />
 
-	<link href="feeds//feeds/rss/category-fedora.xml" type="application/rss+xml" rel="alternate" title="Chino Soliard Categories RSS Feed" />
 
 
 	</head>
@@ -24,15 +21,15 @@
 
 <header id="header" >
 		<h1>Chino Soliard</h1>
-		<h2>IT specialist | Technologies explorer | FOSS enthusiast | Fedora Contributor</h2>
+		<h2>IT specialist | FOSS enthusiast | Fedora Contributor</h2>
 </header>    
 	
 <nav id="menu">
-	<a href="http://www.chinosoliard.com/index.html">$ ./Blog </a>
-	<a href="http://www.chinosoliard.com/archives.html">$ ./BlogHistory </a> 
-	<a href="http://www.chinosoliard.com/categories.html">$ ./CategoriesList</a>
+	<a href="/index.html">$ ./Blog </a>
+	<a href="/archives.html">$ ./BlogHistory </a> 
+	<a href="/categories.html">$ ./CategoriesList</a>
 	
-	<a href="http://www.chinosoliard.com/pages/about-me.html">$ ./pages/AboutMe</a>
+	<a  href="/pages/about-me.html">$ ./pages/AboutMe</a>
 	
 </nav> <!-- /#nav -->
 			<section id="wrapper" class="clearfix">
@@ -44,9 +41,9 @@
 <p>
 ###############
 </br>Date = <time datetime="2014-04-05" pubdate="pubdate">2014-04-05</time>
-</br>Category = <a href="http://www.chinosoliard.com/category/fedora.html">Fedora</a>
+</br>Category = <a href="/category/fedora.html">Fedora</a>
 </br>
-Tags = <a href="http://www.chinosoliard.com/tag/c.html">c++</a> <a href="http://www.chinosoliard.com/tag/cpp.html">cpp</a> <a href="http://www.chinosoliard.com/tag/development.html">development</a> <a href="http://www.chinosoliard.com/tag/eclipse.html">eclipse</a> <a href="http://www.chinosoliard.com/tag/ide.html">IDE</a> <a href="http://www.chinosoliard.com/tag/fedora.html">Fedora</a> <a href="http://www.chinosoliard.com/tag/gnulinux.html">GNU/Linux</a> <a href="http://www.chinosoliard.com/tag/jee.html">jee</a> <a href="http://www.chinosoliard.com/tag/php.html">Php</a></br>
+Tags = <a href="/tag/c.html">c++</a> <a href="/tag/cpp.html">cpp</a> <a href="/tag/development.html">development</a> <a href="/tag/eclipse.html">eclipse</a> <a href="/tag/ide.html">IDE</a> <a href="/tag/fedora.html">Fedora</a> <a href="/tag/gnulinux.html">GNU/Linux</a> <a href="/tag/jee.html">jee</a> <a href="/tag/php.html">Php</a></br>
 Lang = es </br>
 Translations:
 none
@@ -61,67 +58,67 @@ none
 <p><strong>Instalación de JRE/JDK</strong>  </p>
 <ol>
 <li>Descargar JRE o JDK en versión RPM. <a href="http://www.oracle.com/technetwork/es/java/javasebusiness/downloads/index.html">(desde acá)</a>  </li>
-<li>Ejecutamos los siguientes comandos en una consola o terminal:<br />
+<li>Ejecutamos los siguientes comandos en una consola o terminal:<br>
   <code># rpm -ivh jre-8u<em>-linux-</em>.rpm`</code></br>
   <code># alternatives –install /usr/bin/java java /usr/java/default/bin/java 20000</code>  </li>
 </ol>
-<p><strong>Instalación de Eclipse IDE</strong><br />
-Instalar Eclipse en Fedora es tan sencillo como ejecutar “<code>yum install eclipse</code>“, pero nos vemos apegado a configuraciones de Fedora, actualizaciones de Fedora y, nos limitamos a no poder hacer lo que sería el fin de este post.<br />
-De todos modos, instalar Eclipse de forma manual, no trae complicaciones, y tampoco es tan dificil.<br />
+<p><strong>Instalación de Eclipse IDE</strong><br>
+Instalar Eclipse en Fedora es tan sencillo como ejecutar “<code>yum install eclipse</code>“, pero nos vemos apegado a configuraciones de Fedora, actualizaciones de Fedora y, nos limitamos a no poder hacer lo que sería el fin de este post.<br>
+De todos modos, instalar Eclipse de forma manual, no trae complicaciones, y tampoco es tan dificil.<br>
 Lo primero que tenemos que hacer es descargar la versión (o las versiones) que queremos instalar en formato ; Como dije, en mi caso, Eclipse JEE, Eclipse C/C++ y Eclipse PHP (éste último en su versión Helios SP1).  </p>
 <p>Una vez que los descargamos, hay que hacer las instalaciones <strong>DE A UNA</strong>; Tomamos como ejemplo Eclipse JEE, y realizamos los siguientes pasos:  </p>
 <ol>
 <li>
-<p>Extraemos la versión de Eclipse (en este caso JEE) que descargamos con el siguiente comando:<br />
+<p>Extraemos la versión de Eclipse (en este caso JEE) que descargamos con el siguiente comando:<br>
 <code># tar -xvzf eclipse-jee-linux-gtk-*.tar.gz</code> </p>
-<p>Donde “jee” hay que reemplazarlo por lo que corresponda según la versión de eclipse.<br />
+<p>Donde “jee” hay que reemplazarlo por lo que corresponda según la versión de eclipse.<br>
 Donde “*” es un comodín para la arquitectura de Eclipse (32 bits o 64 bits).  </p>
 </li>
 <li>
-<p>Esto va a crear un directorio “eclipse“, el cual vamos a mover a /opt, pero, con un nombre especifico, en el caso de JEE, le cambiamos el nombre a “eclipsejee“, ésto lo hacemos ejecutando:<br />
-<code># mv eclipse /opt/eclipsejee</code><br />
+<p>Esto va a crear un directorio “eclipse“, el cual vamos a mover a /opt, pero, con un nombre especifico, en el caso de JEE, le cambiamos el nombre a “eclipsejee“, ésto lo hacemos ejecutando:<br>
+<code># mv eclipse /opt/eclipsejee</code><br>
   En éste caso, lo movemos a “eclipsejee” porque tomamos como ejemplo Eclipse JEE, puede ser “eclipsephp” o lo que corresponda.  </p>
 </li>
 <li>
-<p>Ahora, tenemos que darle los permisos de lectura a los archivos del directorio, con el comando:<br />
+<p>Ahora, tenemos que darle los permisos de lectura a los archivos del directorio, con el comando:<br>
 <code># chmod -R +r /opt/eclipsejee</code>  </p>
 </li>
 <li>
-<p>Después, creamos el ejecutable, haciendo:<br />
-<code># touch /usr/bin/eclipsejee</code><br />
+<p>Después, creamos el ejecutable, haciendo:<br>
+<code># touch /usr/bin/eclipsejee</code><br>
 <code># chmod 755 /usr/bin/eclipsejee</code>  </p>
-<p>Editamos este archivo que creamos, en este caso, con “gedit”<br />
+<p>Editamos este archivo que creamos, en este caso, con “gedit”<br>
 <code># gedit /usr/bin/eclipsejee</code>  </p>
-<p>En el archivo, copiamos lo siguiente:<br />
+<p>En el archivo, copiamos lo siguiente:<br>
   <code>export ECLIPSEJEE_HOME=”/opt/eclipsejee”</br>
   $ECLIPSEJEE_HOME/eclipse $*</code>  </p>
-<p>Donde “eclipsejee” (o “ECLIPSEJEE”), puede ser “eclipsephp” o lo que corresponda.<br />
+<p>Donde “eclipsejee” (o “ECLIPSEJEE”), puede ser “eclipsephp” o lo que corresponda.<br>
 Con ésto, lo que hacemos es que ahora, desde una consola, usemos el comando “$ eclipsejee” para ejecutar Eclipse JEE.</p>
 </li>
 <li>
-<p>Finalmente, creamos el acceso por el menú de GNOME, esto lo hacemos (con gedit) haciendo:<br />
+<p>Finalmente, creamos el acceso por el menú de GNOME, esto lo hacemos (con gedit) haciendo:<br>
 <code># gedit /usr/share/applications/eclipsejee.desktop</code>  </p>
-<p>Y copiando lo siguiente en el archivo:<br />
+<p>Y copiando lo siguiente en el archivo:<br>
   <code>
-[Desktop Entry]<br />
-Encoding=UTF-8<br />
-Name=Eclipse JEE<br />
-Comment=Eclipse JEE<br />
-Exec=eclipsejee<br />
-Icon=/opt/eclipse/icon.xpm<br />
-Terminal=false<br />
-Type=Application<br />
-Categories=GNOME;Application;Development;<br />
-StartupNotify=true<br />
+[Desktop Entry]<br>
+Encoding=UTF-8<br>
+Name=Eclipse JEE<br>
+Comment=Eclipse JEE<br>
+Exec=eclipsejee<br>
+Icon=/opt/eclipse/icon.xpm<br>
+Terminal=false<br>
+Type=Application<br>
+Categories=GNOME;Application;Development;<br>
+StartupNotify=true<br>
 </code>  </p>
 <p>Ésto creara un icono en el menú de aplicaciones de GNOME, que ejecutará “eclipsejee“.  </p>
 </li>
 </ol>
 <p><strong>Un paso adicional</strong>, es hacer que cada eclipse tenga un icono adecuado, así sería más facil identificarlo (y además más “estético” :-P); Busqué un rato hasta que encontré unos iconos como la gente, y resultaron:</p>
-<p><center><a href="/images/article/2014/04/EclipseIcons/iconjee.xpm"><img alt="eclipsejee" src="/images/article/2014/04/iconjee.png" /></a></center>  </p>
-<p><center><a href="/images/article/2014/04/EclipseIcons/iconphp.xpm"><img alt="eclipsephp" src="/images/article/2014/04/iconphp.png" /></a></center>  </p>
-<p><center><a href="/images/article/2014/04/EclipseIcons/iconcpp.xpm"><img alt="eclipsecpp" src="/images/article/2014/04/iconcpp.png" /></a></center>  </p>
-<p>Una vez descargados, basta moverlos (reemplazar) a icon.xpm en (siguiendo el ejemplo) /opt/eclipsejee/icon.xpm, con el comando:<br />
+<p><center><a href="/images/article/2014/04/EclipseIcons/iconjee.xpm"><img alt="eclipsejee" src="/images/article/2014/04/iconjee.png"></a></center>  </p>
+<p><center><a href="/images/article/2014/04/EclipseIcons/iconphp.xpm"><img alt="eclipsephp" src="/images/article/2014/04/iconphp.png"></a></center>  </p>
+<p><center><a href="/images/article/2014/04/EclipseIcons/iconcpp.xpm"><img alt="eclipsecpp" src="/images/article/2014/04/iconcpp.png"></a></center>  </p>
+<p>Una vez descargados, basta moverlos (reemplazar) a icon.xpm en (siguiendo el ejemplo) /opt/eclipsejee/icon.xpm, con el comando:<br>
 <code># mv /iconjee.xpm /opt/eclipsejee/icon.xpm</code>  </p>
 <p>Espero les ayude.  </p>
 <p>Saludos!</p>
@@ -132,7 +129,7 @@ StartupNotify=true<br />
 <section id="widgets" class="grid col-300 fit" >
 <section id="widget-image-1" class="widget-image">
 	<div class="widget" id="widget">
-		<a href="http://www.fedoraproject.org" target="_blank" alt="Fedora Project">		<img src="http://www.chinosoliard.com/images/widgets/fedora.png">
+		<a href="http://www.fedoraproject.org" target="_blank" alt="Fedora Project">		<img src="/images/widgets/fedora.png">
 </a>	</div>
 </section>
 
@@ -154,52 +151,52 @@ StartupNotify=true<br />
 	<div>
 		<ul class="tagcloud">
         <li class="tag-1">
-            <a href="http://www.chinosoliard.com/tag/gnulinux.html">
+            <a href="/tag/gnulinux.html">
             GNU/Linux
             </a>
         </li>
         <li class="tag-1">
-            <a href="http://www.chinosoliard.com/tag/fedora.html">
+            <a href="/tag/fedora.html">
             Fedora
             </a>
         </li>
         <li class="tag-1">
-            <a href="http://www.chinosoliard.com/tag/event.html">
+            <a href="/tag/event.html">
             event
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/android.html">
+            <a href="/tag/android.html">
             Android
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/parana.html">
+            <a href="/tag/parana.html">
             Paraná
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/flisol.html">
+            <a href="/tag/flisol.html">
             FLISOL
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/lugparana.html">
+            <a href="/tag/lugparana.html">
             LugParana
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/ice-cream-sandwich.html">
+            <a href="/tag/ice-cream-sandwich.html">
             Ice Cream Sandwich
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/sony-ericsson.html">
+            <a href="/tag/sony-ericsson.html">
             Sony Ericsson
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/ics.html">
+            <a href="/tag/ics.html">
             ICS
             </a>
         </li>
@@ -209,7 +206,7 @@ StartupNotify=true<br />
 	
 <section id="widget-image-2" class="widget-image">
 	<div class="widget" id="widget">
-		<a href="http://www.lugparana.org" target="_blank" alt="Linux User Group Paraná (Argentina)">		<img src="http://www.chinosoliard.com/images/widgets/lugparana.png">
+		<a href="http://www.lugparana.org" target="_blank" alt="Linux User Group Paraná (Argentina)">		<img src="/images/widgets/lugparana.png">
 </a>	</div>
 </section>
  
@@ -227,7 +224,7 @@ StartupNotify=true<br />
 
 <section id="widget-image-3" class="widget-image">
 	<div class="widget" id="widget">
-		<a href="http://sysarmy.com.ar/" target="_blank" alt="sysarmy - El soporte de los que dan soporte">		<img src="http://www.chinosoliard.com/images/widgets/sysarmy.png">
+		<a href="http://sysarmy.com.ar/" target="_blank" alt="sysarmy - El soporte de los que dan soporte">		<img src="/images/widgets/sysarmy.png">
 </a>	</div>
 </section>
 </section><!-- widgets -->

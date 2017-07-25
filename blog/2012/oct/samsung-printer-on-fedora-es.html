@@ -6,16 +6,13 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 	<link rel="stylesheet" id="responsive-style-css"  href='/theme/css/style.css' type="text/css" media="all" />
-	<link href="feeds//feeds/atom/all.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Full Atom Feed" />
+	<link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Full Atom Feed" />
 
 
-	<link href="feeds//feeds/atom/feed.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Atom Feed" />
 
-	<link href="feeds//feeds/rss/feed.xml" type="application/rss+xml" rel="alternate" title="Chino Soliard RSS Feed" />
 
-	<link href="feeds//feeds/atom/category-fedora.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Categories Atom Feed" />
+	<link href="/feeds/fedora.atom.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Categories Atom Feed" />
 
-	<link href="feeds//feeds/rss/category-fedora.xml" type="application/rss+xml" rel="alternate" title="Chino Soliard Categories RSS Feed" />
 
 
 	</head>
@@ -24,15 +21,15 @@
 
 <header id="header" >
 		<h1>Chino Soliard</h1>
-		<h2>IT specialist | Technologies explorer | FOSS enthusiast | Fedora Contributor</h2>
+		<h2>IT specialist | FOSS enthusiast | Fedora Contributor</h2>
 </header>    
 	
 <nav id="menu">
-	<a href="http://www.chinosoliard.com/index.html">$ ./Blog </a>
-	<a href="http://www.chinosoliard.com/archives.html">$ ./BlogHistory </a> 
-	<a href="http://www.chinosoliard.com/categories.html">$ ./CategoriesList</a>
+	<a href="/index.html">$ ./Blog </a>
+	<a href="/archives.html">$ ./BlogHistory </a> 
+	<a href="/categories.html">$ ./CategoriesList</a>
 	
-	<a href="http://www.chinosoliard.com/pages/about-me.html">$ ./pages/AboutMe</a>
+	<a  href="/pages/about-me.html">$ ./pages/AboutMe</a>
 	
 </nav> <!-- /#nav -->
 			<section id="wrapper" class="clearfix">
@@ -44,12 +41,12 @@
 <p>
 ###############
 </br>Date = <time datetime="2012-10-21" pubdate="pubdate">2012-10-21</time>
-</br>Category = <a href="http://www.chinosoliard.com/category/fedora.html">Fedora</a>
+</br>Category = <a href="/category/fedora.html">Fedora</a>
 </br>
-Tags = <a href="http://www.chinosoliard.com/tag/clp-315.html">CLP-315</a> <a href="http://www.chinosoliard.com/tag/cups.html">CUPS</a> <a href="http://www.chinosoliard.com/tag/fedora.html">Fedora</a> <a href="http://www.chinosoliard.com/tag/gnulinux.html">GNU/Linux</a> <a href="http://www.chinosoliard.com/tag/printer.html">printer</a> <a href="http://www.chinosoliard.com/tag/ml-1640.html">ML-1640</a> <a href="http://www.chinosoliard.com/tag/samsung.html">samsung</a> <a href="http://www.chinosoliard.com/tag/samsung-unified-linux-drivers.html">Samsung Unified Linux Drivers</a> <a href="http://www.chinosoliard.com/tag/splix.html">SPLIX</a></br>
+Tags = <a href="/tag/clp-315.html">CLP-315</a> <a href="/tag/cups.html">CUPS</a> <a href="/tag/fedora.html">Fedora</a> <a href="/tag/gnulinux.html">GNU/Linux</a> <a href="/tag/printer.html">printer</a> <a href="/tag/ml-1640.html">ML-1640</a> <a href="/tag/samsung.html">samsung</a> <a href="/tag/samsung-unified-linux-drivers.html">Samsung Unified Linux Drivers</a> <a href="/tag/splix.html">SPLIX</a></br>
 Lang = es </br>
 Translations:
-<a href="http://www.chinosoliard.com/blog/2012/oct/samsung-printer-on-fedora-en.html">en</a>
+<a href="/blog/2012/oct/samsung-printer-on-fedora-en.html">en</a>
 
 </br>###############
 </p>
@@ -60,7 +57,7 @@ Translations:
 <p>La segunda, funcional, y mucho más sencilla, es instalar SPLIX, un conjunto de drivers para CUPS que manejan SPL (Samsung Printer Language). A continuación, explico como lo hice.</p>
 <ol>
 <li>
-<p>Ahora está empaquetado para Fedora, entonces, lo único que hay que hacer para instalar el paquete es ejecutar en una consola:<br />
+<p>Ahora está empaquetado para Fedora, entonces, lo único que hay que hacer para instalar el paquete es ejecutar en una consola:<br>
 <code>$ sudo yum install splix</code></p>
 </li>
 <li>
@@ -68,27 +65,27 @@ Translations:
 </li>
 <li>
 <p>En la lista de impresoras locales nos aparece la impresora conectada, la seleccionamos y le damos a “siguiente”.
-<a href="/images/article/2012/10/samsung-printer-on-fedora-1.png"><img alt="samsung-printer-on-fedora-1" src="/images/article/2012/10/samsung-printer-on-fedora-1.png" /></a></p>
+<a href="/images/article/2012/10/samsung-printer-on-fedora-1.png"><img alt="samsung-printer-on-fedora-1" src="/images/article/2012/10/samsung-printer-on-fedora-1.png"></a></p>
 </li>
 <li>
 <p>Luego aparecen las configuraciones para nombre de la impresora, descripción, ubicación, y la opción de compartirla, le damos siguiente (después de configurar a gusto los campos).
-<a href="/images/article/2012/10/samsung-printer-on-fedora-2.png"><img alt="samsung-printer-on-fedora-2" src="/images/article/2012/10/samsung-printer-on-fedora-2.png" /></a></p>
+<a href="/images/article/2012/10/samsung-printer-on-fedora-2.png"><img alt="samsung-printer-on-fedora-2" src="/images/article/2012/10/samsung-printer-on-fedora-2.png"></a></p>
 </li>
 <li>
 <p>Llegamos a la parte donde definimos el controlador, en la lista “Modelo” seleccionamos el modelo que estamos instalando, después “Añadir impresora”.
-<a href="/images/article/2012/10/samsung-printer-on-fedora-3.png"><img alt="samsung-printer-on-fedora-3" src="/images/article/2012/10/samsung-printer-on-fedora-3.png" /></a></p>
+<a href="/images/article/2012/10/samsung-printer-on-fedora-3.png"><img alt="samsung-printer-on-fedora-3" src="/images/article/2012/10/samsung-printer-on-fedora-3.png"></a></p>
 </li>
 <li>
 <p>Finalmente, se nos pide que establezcamos las opciones predeterminadas de la impresora.
-<a href="/images/article/2012/10/samsung-printer-on-fedora-4.png"><img alt="samsung-printer-on-fedora-4" src="/images/article/2012/10/samsung-printer-on-fedora-4.png" /></a></p>
+<a href="/images/article/2012/10/samsung-printer-on-fedora-4.png"><img alt="samsung-printer-on-fedora-4" src="/images/article/2012/10/samsung-printer-on-fedora-4.png"></a></p>
 </li>
 <li>
 <p>Una vez que estemos en la parte de la impresora, dentro de CUPS, podemos probar la impresora seleccionando “Imprimir página de prueba” en la lista “Mantenimiento”.
-<a href="/images/article/2012/10/samsung-printer-on-fedora-5.png"><img alt="samsung-printer-on-fedora-5" src="/images/article/2012/10/samsung-printer-on-fedora-5.png" /></a></p>
+<a href="/images/article/2012/10/samsung-printer-on-fedora-5.png"><img alt="samsung-printer-on-fedora-5" src="/images/article/2012/10/samsung-printer-on-fedora-5.png"></a></p>
 </li>
 </ol>
 <p>La impresora ya está funcionando, pero, a mi personalmente, me quedaron 4 impresoras instaladas en la lista de impresoras de CUPS, por lo que eliminé las que yo no instalé (las detecté por el nombre).</p>
-<p><a href="/images/article/2012/10/samsung-printer-on-fedora-6.png"><img alt="samsung-printer-on-fedora-6" src="/images/article/2012/10/samsung-printer-on-fedora-6.png" /></a></p>
+<p><a href="/images/article/2012/10/samsung-printer-on-fedora-6.png"><img alt="samsung-printer-on-fedora-6" src="/images/article/2012/10/samsung-printer-on-fedora-6.png"></a></p>
 <p>Bueno, así de sencillo fue instalar las impresoras, espero les haya sido útil.</p>
 	</div><!-- /.entry-content -->        
 </section>
@@ -97,7 +94,7 @@ Translations:
 <section id="widgets" class="grid col-300 fit" >
 <section id="widget-image-1" class="widget-image">
 	<div class="widget" id="widget">
-		<a href="http://www.fedoraproject.org" target="_blank" alt="Fedora Project">		<img src="http://www.chinosoliard.com/images/widgets/fedora.png">
+		<a href="http://www.fedoraproject.org" target="_blank" alt="Fedora Project">		<img src="/images/widgets/fedora.png">
 </a>	</div>
 </section>
 
@@ -119,52 +116,52 @@ Translations:
 	<div>
 		<ul class="tagcloud">
         <li class="tag-1">
-            <a href="http://www.chinosoliard.com/tag/gnulinux.html">
+            <a href="/tag/gnulinux.html">
             GNU/Linux
             </a>
         </li>
         <li class="tag-1">
-            <a href="http://www.chinosoliard.com/tag/fedora.html">
+            <a href="/tag/fedora.html">
             Fedora
             </a>
         </li>
         <li class="tag-1">
-            <a href="http://www.chinosoliard.com/tag/event.html">
+            <a href="/tag/event.html">
             event
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/android.html">
+            <a href="/tag/android.html">
             Android
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/parana.html">
+            <a href="/tag/parana.html">
             Paraná
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/flisol.html">
+            <a href="/tag/flisol.html">
             FLISOL
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/lugparana.html">
+            <a href="/tag/lugparana.html">
             LugParana
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/ice-cream-sandwich.html">
+            <a href="/tag/ice-cream-sandwich.html">
             Ice Cream Sandwich
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/sony-ericsson.html">
+            <a href="/tag/sony-ericsson.html">
             Sony Ericsson
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/ics.html">
+            <a href="/tag/ics.html">
             ICS
             </a>
         </li>
@@ -174,7 +171,7 @@ Translations:
 	
 <section id="widget-image-2" class="widget-image">
 	<div class="widget" id="widget">
-		<a href="http://www.lugparana.org" target="_blank" alt="Linux User Group Paraná (Argentina)">		<img src="http://www.chinosoliard.com/images/widgets/lugparana.png">
+		<a href="http://www.lugparana.org" target="_blank" alt="Linux User Group Paraná (Argentina)">		<img src="/images/widgets/lugparana.png">
 </a>	</div>
 </section>
  
@@ -192,7 +189,7 @@ Translations:
 
 <section id="widget-image-3" class="widget-image">
 	<div class="widget" id="widget">
-		<a href="http://sysarmy.com.ar/" target="_blank" alt="sysarmy - El soporte de los que dan soporte">		<img src="http://www.chinosoliard.com/images/widgets/sysarmy.png">
+		<a href="http://sysarmy.com.ar/" target="_blank" alt="sysarmy - El soporte de los que dan soporte">		<img src="/images/widgets/sysarmy.png">
 </a>	</div>
 </section>
 </section><!-- widgets -->

@@ -6,16 +6,13 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 	<link rel="stylesheet" id="responsive-style-css"  href='/theme/css/style.css' type="text/css" media="all" />
-	<link href="feeds//feeds/atom/all.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Full Atom Feed" />
+	<link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Full Atom Feed" />
 
 
-	<link href="feeds//feeds/atom/feed.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Atom Feed" />
 
-	<link href="feeds//feeds/rss/feed.xml" type="application/rss+xml" rel="alternate" title="Chino Soliard RSS Feed" />
 
-	<link href="feeds//feeds/atom/category-fedora.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Categories Atom Feed" />
+	<link href="/feeds/fedora.atom.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Categories Atom Feed" />
 
-	<link href="feeds//feeds/rss/category-fedora.xml" type="application/rss+xml" rel="alternate" title="Chino Soliard Categories RSS Feed" />
 
 
 	</head>
@@ -24,15 +21,15 @@
 
 <header id="header" >
 		<h1>Chino Soliard</h1>
-		<h2>IT specialist | Technologies explorer | FOSS enthusiast | Fedora Contributor</h2>
+		<h2>IT specialist | FOSS enthusiast | Fedora Contributor</h2>
 </header>    
 	
 <nav id="menu">
-	<a href="http://www.chinosoliard.com/index.html">$ ./Blog </a>
-	<a href="http://www.chinosoliard.com/archives.html">$ ./BlogHistory </a> 
-	<a href="http://www.chinosoliard.com/categories.html">$ ./CategoriesList</a>
+	<a href="/index.html">$ ./Blog </a>
+	<a href="/archives.html">$ ./BlogHistory </a> 
+	<a href="/categories.html">$ ./CategoriesList</a>
 	
-	<a href="http://www.chinosoliard.com/pages/about-me.html">$ ./pages/AboutMe</a>
+	<a  href="/pages/about-me.html">$ ./pages/AboutMe</a>
 	
 </nav> <!-- /#nav -->
 			<section id="wrapper" class="clearfix">
@@ -44,9 +41,9 @@
 <p>
 ###############
 </br>Date = <time datetime="2012-12-15" pubdate="pubdate">2012-12-15</time>
-</br>Category = <a href="http://www.chinosoliard.com/category/fedora.html">Fedora</a>
+</br>Category = <a href="/category/fedora.html">Fedora</a>
 </br>
-Tags = <a href="http://www.chinosoliard.com/tag/fedora.html">Fedora</a> <a href="http://www.chinosoliard.com/tag/gnulinux.html">GNU/Linux</a> <a href="http://www.chinosoliard.com/tag/oracle.html">Oracle</a> <a href="http://www.chinosoliard.com/tag/virtualbox.html">VirtualBox</a></br>
+Tags = <a href="/tag/fedora.html">Fedora</a> <a href="/tag/gnulinux.html">GNU/Linux</a> <a href="/tag/oracle.html">Oracle</a> <a href="/tag/virtualbox.html">VirtualBox</a></br>
 Lang = es </br>
 Translations:
 none
@@ -56,15 +53,15 @@ none
 	</header>
 	<div class="post-entry">
 		<p>No soy de usar tanto VirtualBox, ni maquinas virtuales, pero hoy pensé en usar una para hacer unas pruebas y cuando abrí VirtualBox 4.1.* me informó que existía una versión nueva (4.2.*).</br></br>No he actualizado mucho la guía de post-instalación de Fedora, y VirtualBox se venía actualizando sin problemas (claro, en su versión 4.1), tengo la teoría de que es conveniente tener siempre el software actualizado, así que no dudé en actualizar VirtualBox a su versión 4.2.*</br> </br>A continuación explico como hacerlo.</p>
-        	<p>Aclaro, que cuando quise instalar la versión 4.2.* no me dijo que desinstalaría la versión 4.1.*, ni que molestaría, ni nada, pero por las dudas, la desinstalé igual con el siguiente comando:<br />
+        	<p>Aclaro, que cuando quise instalar la versión 4.2.* no me dijo que desinstalaría la versión 4.1.*, ni que molestaría, ni nada, pero por las dudas, la desinstalé igual con el siguiente comando:<br>
 <code>$ sudo yum remove VirtualBox-4.1*</code>  </p>
-<p>Si no tuvieses instalado la versión anterior de VirtualBox, deberías instalar los repositorios oficiales, para mantener siempre actualizado (la versión actual, de acuerdo a lo que me pasó a mí). Primero, descargamos el archivo de repositorio ejecutando el siguiente comando en una consola:<br />
+<p>Si no tuvieses instalado la versión anterior de VirtualBox, deberías instalar los repositorios oficiales, para mantener siempre actualizado (la versión actual, de acuerdo a lo que me pasó a mí). Primero, descargamos el archivo de repositorio ejecutando el siguiente comando en una consola:<br>
 <code>$ sudo wget http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo</code>  </p>
-<p>Luego, lo movemos al directorio de los repositorios, lo hacemos con la siguiente linea:<br />
+<p>Luego, lo movemos al directorio de los repositorios, lo hacemos con la siguiente linea:<br>
 <code>$ sudo mv virtualbox.repo /etc/yum.repos.d/</code>  </p>
-<p>Instalamos las cabeceras del kernel, y otros modulos para el kernel:<br />
+<p>Instalamos las cabeceras del kernel, y otros modulos para el kernel:<br>
 <code>$ sudo yum install gcc kernel-headers dkms kernel-devel</code>  </p>
-<p>Finalmente, ejecutamos la instalación de VirtualBox 4.2:<br />
+<p>Finalmente, ejecutamos la instalación de VirtualBox 4.2:<br>
 <code>$ sudo yum install VirtualBox-4.2</code>  </p>
 <p>Listo! Tenemos instalado la ultima versión de VirtualBox 4.2, y se actualizará simplemente con un <code>$ sudo yum update</code></p>
 	</div><!-- /.entry-content -->        
@@ -74,7 +71,7 @@ none
 <section id="widgets" class="grid col-300 fit" >
 <section id="widget-image-1" class="widget-image">
 	<div class="widget" id="widget">
-		<a href="http://www.fedoraproject.org" target="_blank" alt="Fedora Project">		<img src="http://www.chinosoliard.com/images/widgets/fedora.png">
+		<a href="http://www.fedoraproject.org" target="_blank" alt="Fedora Project">		<img src="/images/widgets/fedora.png">
 </a>	</div>
 </section>
 
@@ -96,52 +93,52 @@ none
 	<div>
 		<ul class="tagcloud">
         <li class="tag-1">
-            <a href="http://www.chinosoliard.com/tag/gnulinux.html">
+            <a href="/tag/gnulinux.html">
             GNU/Linux
             </a>
         </li>
         <li class="tag-1">
-            <a href="http://www.chinosoliard.com/tag/fedora.html">
+            <a href="/tag/fedora.html">
             Fedora
             </a>
         </li>
         <li class="tag-1">
-            <a href="http://www.chinosoliard.com/tag/event.html">
+            <a href="/tag/event.html">
             event
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/android.html">
+            <a href="/tag/android.html">
             Android
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/parana.html">
+            <a href="/tag/parana.html">
             Paraná
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/flisol.html">
+            <a href="/tag/flisol.html">
             FLISOL
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/lugparana.html">
+            <a href="/tag/lugparana.html">
             LugParana
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/ice-cream-sandwich.html">
+            <a href="/tag/ice-cream-sandwich.html">
             Ice Cream Sandwich
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/sony-ericsson.html">
+            <a href="/tag/sony-ericsson.html">
             Sony Ericsson
             </a>
         </li>
         <li class="tag-2">
-            <a href="http://www.chinosoliard.com/tag/ics.html">
+            <a href="/tag/ics.html">
             ICS
             </a>
         </li>
@@ -151,7 +148,7 @@ none
 	
 <section id="widget-image-2" class="widget-image">
 	<div class="widget" id="widget">
-		<a href="http://www.lugparana.org" target="_blank" alt="Linux User Group Paraná (Argentina)">		<img src="http://www.chinosoliard.com/images/widgets/lugparana.png">
+		<a href="http://www.lugparana.org" target="_blank" alt="Linux User Group Paraná (Argentina)">		<img src="/images/widgets/lugparana.png">
 </a>	</div>
 </section>
  
@@ -169,7 +166,7 @@ none
 
 <section id="widget-image-3" class="widget-image">
 	<div class="widget" id="widget">
-		<a href="http://sysarmy.com.ar/" target="_blank" alt="sysarmy - El soporte de los que dan soporte">		<img src="http://www.chinosoliard.com/images/widgets/sysarmy.png">
+		<a href="http://sysarmy.com.ar/" target="_blank" alt="sysarmy - El soporte de los que dan soporte">		<img src="/images/widgets/sysarmy.png">
 </a>	</div>
 </section>
 </section><!-- widgets -->
