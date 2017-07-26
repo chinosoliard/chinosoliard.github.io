@@ -88,7 +88,7 @@ none
 <p>Ahora, vamos a lo nuestro...</p>
 <ol>
 <li>
-<p><strong>Preparar OpenRecovery</strong><br>
+<p><strong>Preparar OpenRecovery</strong><br />
   OpenRecovery son herramientas para la gestión del equipo y del sistema operativo, el cual vas a usar para restaurar el celular a fabrica, actualizarlo y, básicamente, todos los pasos a seguir.</p>
 <ol>
 <li>
@@ -100,7 +100,7 @@ none
 </ol>
 </li>
 <li>
-<p><strong>Instalar el “Vulnerable Recovery”</strong><br>
+<p><strong>Instalar el “Vulnerable Recovery”</strong><br />
   El “Vulnerable Recovery” no cambia nada en el sistema del dispositivo, solo flashea la partición de recuperación original, permitiendo que se ejecute el OpenRecovery desde la MicroSD.</p>
 <ol>
 <li>
@@ -119,7 +119,7 @@ none
 <p>Elegí el archivo sbf del vulnerable recovery haciendo clic en el botón “…” que aparece arriba.</p>
 </li>
 <li>
-<p><strong>IMPORTANTE:</strong> Cuando el teléfono se reinicie luego de empezar el proceso de flasheo, es MUY recomendable que no llegue a iniciar android, e inicie Open Recovery. Para esto hay que mantener el botón de la cámara presionado mientras el equipo se reinicia, hasta que aparezca un triangulo.<br>
+<p><strong>IMPORTANTE:</strong> Cuando el teléfono se reinicie luego de empezar el proceso de flasheo, es MUY recomendable que no llegue a iniciar android, e inicie Open Recovery. Para esto hay que mantener el botón de la cámara presionado mientras el equipo se reinicia, hasta que aparezca un triangulo.<br />
 Haz clic en el botón “start” y espera a que el teléfono reinicie. Acordate de mantener el botón de la cámara precionado cuando esto pase.</p>
 </li>
 <li>
@@ -128,7 +128,7 @@ Haz clic en el botón “start” y espera a que el teléfono reinicie. Acordate
 </ol>
 </li>
 <li>
-<p><strong>Instalar OpenRecovery</strong><br>
+<p><strong>Instalar OpenRecovery</strong><br />
   NOTA:Todas las veces que quieras inicar el equipo en modo recovery debes mantener el botón de la cámara junto con el de encendido.</p>
 <ol>
 <li>
@@ -138,12 +138,12 @@ Haz clic en el botón “start” y espera a que el teléfono reinicie. Acordate
 <p>Para terminar de instalar OpenRecovery, tenés que seleccionar “apply sdcard:update.zip”. (La navegación por el menú es con las direcciones del teclado qwerty y el botón del medio actúa como ENTER).</p>
 </li>
 <li>
-<p>Después de un rato, verás que el menú cambió. Ahora, inclusive, puedes moverte con las teclas de volumen, y el botón de la cámara hace de ENTER.<br>
-Debería verse algo como la siguiente imagen:<br>
-<center><img alt="OpenRecovery" src="http://2.bp.blogspot.com/_8HmrfJJQrGw/TSMoFnnO3ZI/AAAAAAAAA8M/9agds36If-U/s1600/xt720%2Bopenrecovery.png" title="OpenRecovery"></center>  </p>
+<p>Después de un rato, verás que el menú cambió. Ahora, inclusive, puedes moverte con las teclas de volumen, y el botón de la cámara hace de ENTER.<br />
+Debería verse algo como la siguiente imagen:<br />
+<center><img alt="OpenRecovery" src="http://2.bp.blogspot.com/_8HmrfJJQrGw/TSMoFnnO3ZI/AAAAAAAAA8M/9agds36If-U/s1600/xt720%2Bopenrecovery.png" title="OpenRecovery" /></center>  </p>
 </li>
 <li>
-<p>En el punto 2.6, dije que no convenía que el teléfono iniciara Android, la razón es porque Motorola instala un script que instala el recovery original, este se ejecuta cada vez que se inicia Android.<br>
+<p>En el punto 2.6, dije que no convenía que el teléfono iniciara Android, la razón es porque Motorola instala un script que instala el recovery original, este se ejecuta cada vez que se inicia Android.<br />
 Para eliminarlo:</p>
 <ol>
 <li>Ejecutamos la consola (“console”) de OpenRecovery</li>
@@ -154,7 +154,7 @@ Para eliminarlo:</p>
 </ol>
 </li>
 <li>
-<p><strong>Particion para Aplicaciones (Opcional)</strong><br>
+<p><strong>Particion para Aplicaciones (Opcional)</strong><br />
   A pesar de ser un paso opcional, es recomandado hacerlo, aumenta el espacio para instalar aplicaciones de tu teléfono.  </p>
 <blockquote>
 <p><strong>NOTA:</strong> Siempre que quieras cambiar la disposición de teclado de OpenRecovery, tenés que ir a “settings/Keyboard Layout” y cambiarlo.</p>
@@ -168,12 +168,12 @@ Para eliminarlo:</p>
 <p>Dentro del menú de OpenRecovery, nos vamos a la consola (“console”). Ahí:</p>
 <ol>
 <li>Desmontamos la tarjeta con el comando “umount /sdcard”.</li>
-<li>Iniciamos el editor de particiones parted con el comando “parted /dev/block/mmcblk0”.<br>
+<li>Iniciamos el editor de particiones parted con el comando “parted /dev/block/mmcblk0”.<br />
 <strong>IMPORTANTE:</strong> Dentro de parted la tecla borrar NO FUNCIONA, así que tené mucho cuidado con lo que escribes.  </li>
-<li>Listá la tabla de particiones de tu MicroSD con el comando “print”<br>
-Deberías ver algo como la imagen siguiente:<br>
+<li>Listá la tabla de particiones de tu MicroSD con el comando “print”<br />
+Deberías ver algo como la imagen siguiente:<br />
 Es importante que anotes el tamaño exacto de la tarjeta. Verás “Disk /dev/block/mmcblk0: XXXXMB”, esos XXXXMB son el tamaño exacto de la tarjeta.</li>
-<li>Redimensiona la partición FAT32 para dejar 1GB libre (1024MB). En el caso de la imagen, la partición sería 7969MB – 1024MB = 6945MB.<br>
+<li>Redimensiona la partición FAT32 para dejar 1GB libre (1024MB). En el caso de la imagen, la partición sería 7969MB – 1024MB = 6945MB.<br />
 Para hacerlo, ejecuta el comando “resize 1 0MB 6945MB”, donde:<ul>
 <li>1 es el número de partición.</li>
 <li>0MB es donde comenzaría la partición.</li>
@@ -188,7 +188,7 @@ Usa el comando “mkpartfs primary ext2 6945MB 7969MB”, donde:<ul>
 <li>7969MB es donde terminaría la partición.</li>
 </ul>
 </li>
-<li>Listá nuevamente las particiones, para corroborar que todo haya salido bien, esto con el comando “print”.<br>
+<li>Listá nuevamente las particiones, para corroborar que todo haya salido bien, esto con el comando “print”.<br />
    Debería verse algo parecido a la imagen siguiente.</li>
 <li>Si todo salió bien, con el comando “quit” salimos de parted.</li>
 <li>Convertimos la particion ext2 a ext3, usando el comando “tune2fs -j /dev/block/mmcblk0p2”.</li>
@@ -199,7 +199,7 @@ Usa el comando “mkpartfs primary ext2 6945MB 7969MB”, donde:<ul>
 </ol>
 </li>
 <li>
-<p><strong>Instalar CyanogenMod</strong><br>
+<p><strong>Instalar CyanogenMod</strong><br />
   El último paso es instalar CyanogenMod. Una vez que tengás <a href="http://adf.ly/deEAA">la última versión descargada</a> y las <a href="http://adf.ly/deEBE">Google Apps</a>,los pasos a seguir son:  </p>
 <ol>
 <li>Iniciar el equipo en OpenRecovery.</li>

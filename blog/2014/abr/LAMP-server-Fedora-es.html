@@ -61,18 +61,18 @@ none
 <p><strong>Instalación</strong>  </p>
 <ol>
 <li>
-<p><strong>Apache Web Server</strong><br>
-<a href="http://www.apache.org/">Apache</a> es una fundación, pero el nombre Apache hace (directamente) referencia al servidor web HTTPd (Apache HyperText Transfer Protocol daemon). Instalarlo en Fedora no es para nada dificil, basta con ejecutar el siguiente comando en la consola:<br>
+<p><strong>Apache Web Server</strong><br />
+<a href="http://www.apache.org/">Apache</a> es una fundación, pero el nombre Apache hace (directamente) referencia al servidor web HTTPd (Apache HyperText Transfer Protocol daemon). Instalarlo en Fedora no es para nada dificil, basta con ejecutar el siguiente comando en la consola:<br />
 <code># yum install httpd</code>  </p>
 </li>
 <li>
-<p><strong>MariaDB</strong><br>
-  En el caso de Fedora, MySQL fue reemplazado por MariaDB, tras la compra de MySQL por parte de Oracle, lo cual lo convirtió en un software de codigo abierto, en vez de software libre, como antes era. Al igual que al servidor web Apache, instalarlo es tan sencillo como ejecutar el siguiente comando:<br>
+<p><strong>MariaDB</strong><br />
+  En el caso de Fedora, MySQL fue reemplazado por MariaDB, tras la compra de MySQL por parte de Oracle, lo cual lo convirtió en un software de codigo abierto, en vez de software libre, como antes era. Al igual que al servidor web Apache, instalarlo es tan sencillo como ejecutar el siguiente comando:<br />
 <code># yum install mariadb-server</code>  </p>
 </li>
 <li>
-<p><strong>PHP (mod_php)</strong><br>
-  El servidor web Apache es modular, por lo que se pueden instalar los módulos que necesitemos (mod_python, mod_perl, mos_php, mod_ssl, etc.). En mi caso, que voy a trabajar con PHP, voy a instalar mod_php, con el comando siguiente:<br>
+<p><strong>PHP (mod_php)</strong><br />
+  El servidor web Apache es modular, por lo que se pueden instalar los módulos que necesitemos (mod_python, mod_perl, mos_php, mod_ssl, etc.). En mi caso, que voy a trabajar con PHP, voy a instalar mod_php, con el comando siguiente:<br />
 <code># yum install php</code>  </p>
 </li>
 </ol>
@@ -82,13 +82,13 @@ none
 <p><strong>Inicialización de los servicios</strong></p>
 <ol>
 <li>
-<p><strong>Apache Web Server</strong><br>
-  Para iniciar el servidor web apache, hacemos:<br>
+<p><strong>Apache Web Server</strong><br />
+  Para iniciar el servidor web apache, hacemos:<br />
 <code># systemctl start httpd.service</code>  </p>
 </li>
 <li>
-<p><strong>MariaDB</strong><br>
-  En el caso de MariaDB, ejecutamos:<br>
+<p><strong>MariaDB</strong><br />
+  En el caso de MariaDB, ejecutamos:<br />
 <code># systemctl start mariadb.service</code>  </p>
 </li>
 </ol>
@@ -97,7 +97,7 @@ none
 <p><strong>Configuración de los servicios y el sistema</strong>  </p>
 <ol>
 <li>
-<p><strong>Instalación segura de MariaDB</strong><br>
+<p><strong>Instalación segura de MariaDB</strong><br />
   Este proceso:  </p>
 <ul>
 <li>Establece (Cambia) la contraseña de root (de MariaDB).  </li>
@@ -106,28 +106,28 @@ none
 <li>Elimina la base de datos “test” y el acceso a ésta.  </li>
 <li>Carga nuevamente la tabla de privilegios.  </li>
 </ul>
-<p>Para ejecutar “MariaDB Secure Installation” corremos el comando:<br>
+<p>Para ejecutar “MariaDB Secure Installation” corremos el comando:<br />
 <code># /usr/bin/mysql_secure_installation</code>  </p>
 </li>
 <li>
-<p><strong>Permisos del directorio de Apache</strong><br>
-  Al instala HTTPd, se crea el directorio <code>/var/www/html</code>, el cual contendrá el/los archivos del servidor web, con esto me refiero a que si ingresamos a <code>http://localhost/index.php</code> estaremos ingresando a <code>/var/www/html/index.php</code>.<br>
-  Si queremos añadir un archivo o editar alguno, necesitaremos permisos para ello, y apache también necesita acceso para poder “servir” los archivos; Entonces, debemos hacer que el directorio “/var/www/html” pertenezca al grupo “apache”, y a nuestro usuario, ésto se configura mediante los siguientes comandos:<br>
+<p><strong>Permisos del directorio de Apache</strong><br />
+  Al instala HTTPd, se crea el directorio <code>/var/www/html</code>, el cual contendrá el/los archivos del servidor web, con esto me refiero a que si ingresamos a <code>http://localhost/index.php</code> estaremos ingresando a <code>/var/www/html/index.php</code>.<br />
+  Si queremos añadir un archivo o editar alguno, necesitaremos permisos para ello, y apache también necesita acceso para poder “servir” los archivos; Entonces, debemos hacer que el directorio “/var/www/html” pertenezca al grupo “apache”, y a nuestro usuario, ésto se configura mediante los siguientes comandos:<br />
 <code># chown -R usuario /var/www/html/</code>  </p>
 <p><code># chgrp -R apache /var/www/html/</code>  </p>
 <p><code># chmod -R 750 /var/www/html/</code>  </p>
 <p><code># chmod g+s /var/www/</code>  </p>
-<p>Si Apache va a tener que escribir archivos en el directorio (por ejemplo: subir archivos), también tendremos que darle permisos de escritura a Apache, usando el siguiente comando, le daremos permiso a Apache para escribir en un directorio llamado “media” dentro de /var/www/html/<br>
+<p>Si Apache va a tener que escribir archivos en el directorio (por ejemplo: subir archivos), también tendremos que darle permisos de escritura a Apache, usando el siguiente comando, le daremos permiso a Apache para escribir en un directorio llamado “media” dentro de /var/www/html/<br />
 <code>#chmod g+w /var/www/html/media</code>  </p>
 </li>
 </ol>
 <p>Con esto ya estaríamos listo para trabajar.  </p>
 </li>
 <li>
-<p><strong>Configurando el inicio automático de los servicios</strong><br>
-  En el caso de que queramos que nuestro sistema funcione como servidor, resultaría tedioso iniciar los servicios manualmente cada vez que el equipo se apague, se corte la luz, o lo-que-sea, podemos hacer que los servicios se ejecuten automáticamente haciendo uso de los comandos:<br>
-  <code># systemctl enable mariadb.service</code></br><br>
-  <code># systemctl enable httpd.service</code></br>  <br>
+<p><strong>Configurando el inicio automático de los servicios</strong><br />
+  En el caso de que queramos que nuestro sistema funcione como servidor, resultaría tedioso iniciar los servicios manualmente cada vez que el equipo se apague, se corte la luz, o lo-que-sea, podemos hacer que los servicios se ejecuten automáticamente haciendo uso de los comandos:<br />
+  <code># systemctl enable mariadb.service</code></br><br />
+  <code># systemctl enable httpd.service</code></br>  <br />
    Estos últimos 2 (dos) comandos hacen que inicien automáticamente al inicio del sistema MariaDB y Apache HTTP Server (respectivamente).  </p>
 </li>
 </ol>

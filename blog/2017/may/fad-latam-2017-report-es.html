@@ -40,56 +40,61 @@
 				<section id="content" class="grid col-620" >
 <section id="post" class="post hentry">
 	<header>
-		<h2 class="post-title" >Impresoras Samsung en Fedora</h2>
+		<h2 class="post-title" >FAD Latam Cusco 2017 [Reporte]</h2>
 <p>
 ###############
-</br>Date = <time datetime="2012-10-21" pubdate="pubdate">2012-10-21</time>
+</br>Date = <time datetime="2017-05-31" pubdate="pubdate">2017-05-31</time>
 </br>Category = <a href="http://www.chinosoliard.com/category/fedora.html">Fedora</a>
 </br>
-Tags = <a href="http://www.chinosoliard.com/tag/clp-315.html">CLP-315</a> <a href="http://www.chinosoliard.com/tag/cups.html">CUPS</a> <a href="http://www.chinosoliard.com/tag/fedora.html">Fedora</a> <a href="http://www.chinosoliard.com/tag/gnulinux.html">GNU/Linux</a> <a href="http://www.chinosoliard.com/tag/printer.html">printer</a> <a href="http://www.chinosoliard.com/tag/ml-1640.html">ML-1640</a> <a href="http://www.chinosoliard.com/tag/samsung.html">samsung</a> <a href="http://www.chinosoliard.com/tag/samsung-unified-linux-drivers.html">Samsung Unified Linux Drivers</a> <a href="http://www.chinosoliard.com/tag/splix.html">SPLIX</a></br>
+Tags = <a href="http://www.chinosoliard.com/tag/fedora.html">Fedora</a> <a href="http://www.chinosoliard.com/tag/fad.html">FAD</a> <a href="http://www.chinosoliard.com/tag/peru.html">Peru</a> <a href="http://www.chinosoliard.com/tag/cuzco.html">Cuzco</a> <a href="http://www.chinosoliard.com/tag/event.html">event</a></br>
 Lang = es </br>
 Translations:
-<a href="http://www.chinosoliard.com/blog/2012/oct/samsung-printer-on-fedora-en.html">en</a>
+<a href="http://www.chinosoliard.com/blog/2017/may/fad-latam-2017-report-en.html">en</a>
 
 </br>###############
 </p>
 	</header>
 	<div class="post-entry">
-		<p>Hace más de 2 años que tengo 2 impresoras láser marca Samsung, una <a href="http://www.samsung.com/es/consumer/pc-peripherals-printer/printers/laser-monocrome-printers/ML-1640/SEE">ML-1640</a> y una <a href="http://www.samsung.com/es/business/printer/productos-y-soluciones/impresoras-y-faxes/impresoras-l%C3%A1ser-color/clp-310-/impresora-l%C3%A1ser-color-clp-315/feature.prt?printerCode=CLP-315/SEE">CLP-315</a>. Sinceramente, nunca me dediqué mucho a hacerlas funcionar en GNU/Linux, cuando intenté hacerlo simplemente con <a href="http://www.cups.org/">CUPS</a> no lo conseguí. Ahora que uso <a href="http://www.fedoraproject.org/es/">Fedora</a> el 99,9% del tiempo en que estoy sentado frente a un equipo, tuve que buscar la forma de que funcionen. Luego de publicar una pregunta en <a href="http://ask.fedoraproject.org">ask.fedoraproject.org</a>, recibí 2 respuestas, de las cuales una funcionó.</p>
-        	<p>La primera y no funcional, era instalar los drivers oficiales de <a href="http://downloadcenter.samsung.com/content/DR/200911/20091118145015140/UnifiedLinuxDriver_1.01.tar.gz">Samsung Unified Linux Drivers</a>, lo ejecuté con “$ sudo”, y comencé la instalación. Durante la instalación ya se pueden instalar impresoras, conecté la ML-1640, y parecía ir todo muy bien. Cuando terminé con toda la instalación, voy a CUPS (<a href="http://localhost:631/">http://localhost:631</a>) y la impresora aparecía. Entre muchos detalles que ya no recuerdo, lo único que sé es que la impresora NUNCA FUNCIONÓ, busqué en internet y resultó que el paquete era muy problemático entonces proseguí a desinstalar el maldecido paquete, para esto, en una consola ejecutamos $ sudo /opt/Samsung/mfp/uninstall/guiuninstall, esto iniciará la desinstalación. Después de unos pasos, el programa no dejó rastros (o eso pareciera).</p>
-<p>La segunda, funcional, y mucho más sencilla, es instalar SPLIX, un conjunto de drivers para CUPS que manejan SPL (Samsung Printer Language). A continuación, explico como lo hice.</p>
-<ol>
-<li>
-<p>Ahora está empaquetado para Fedora, entonces, lo único que hay que hacer para instalar el paquete es ejecutar en una consola:<br />
-<code>$ sudo yum install splix</code></p>
+		<p><a href="http://www.fedoraproject.org" target="_blank"><img alt="fedora" src="/images/static/fedora-150.png" class="alignright"></a> Durante los días 13, 14 y 15 del mes de julio, varios embajadores de Fedora Project nos juntamos en un FAD para coordinar el trabajo en toda la región LATAM. Fueron 3 días de dormir poco y pensar mucho, pero el trabajo tuvo su resultado, y ahora sólo queda  ejecutar las estrategias.</p>
+        	<h2>¿Por qué un FAD?</h2>
+<p>Últimamente, la región ha tenido problemas de coordinación, los cuales era muy difícil trabajar por internet, ya que se requería demasiado tiempo y más fluidez. Además, no hemos demostrado las actividades que llevamos a cabo de la forma correcta. Eso, entre otros problemas, requería que nos juntemos y nos dediquemos intensamente a resolver los problemas o, por lo menos, formar una estrategia para resolverlos.<br />
+La propuesta de FAD se puede ver acá: <a href="https://fedoraproject.org/wiki/FAD:Latam_2017">FAD:Latam 2017</a></p>
+<h2>¿Por qué en Cusco?</h2>
+<p>Alex tuvo la iniciativa de la realización del FAD, además, se preocupó por tener todo organizado:  </p>
+<ul>
+<li><strong>El lugar de trabajo:</strong><br />
+    Trabajamos los 3 días en la Universidad Global del Cusco, la cual nos brindó conexión a internet, y salón de trabajo.  </li>
+<li><strong>El alojamiento:</strong><br />
+    Nos alojamos en un cómodo hostal, con todas las comodidades, y muy cerca del lugar de trabajo.</li>
+</ul>
+<p>Hubo también otras propuestas, pero la propuesta de Alex, además de ser la original, fue la que más convenció.  </p>
+<h2>¿Quienes fuimos?</h2>
+<p>El FAD estuvo organizado y coordinado por <a href="https://fedoraproject.org/wiki/User:Alexove">Alex (Perú)</a>, y contamos con la ayuda de <a href="https://fedoraproject.org/wiki/User:Bex">Brian (República Checa)</a>, asistimos como representantes de nuestros países <a href="https://fedoraproject.org/wiki/User:Josereyesjdi">José (Panamá)</a>, <a href="https://fedoraproject.org/wiki/User:Searchsam">Samuel (Nicaragua)</a>, <a href="https://fedoraproject.org/wiki/User:Tonet666p">Tonet (Perú)</a>, <a href="https://fedoraproject.org/wiki/User:Itamarjp">Itamar (Brasil)</a>, <a href="https://fedoraproject.org/wiki/User:X3mboy">Eduard (Chile)</a> y <a href="https://fedoraproject.org/wiki/User:Asoliard">yo (Argentina)</a>. Además, contamos con la presencia de <a href="https://fedoraproject.org/wiki/User:yn1v">Neville (Nicaragua)</a> y <a href="https://fedoraproject.org/wiki/User:echevemaster">Eduardo (Colombia)</a> por videoconferencia. Estuvieron por asistir, también, representantes de Paraguay y Venezuela, pero por cuestiones de fuerza mayor, no pudieron presentarse.  </p>
+<p><img alt="fad-foda" src="/images/article/2017/07/fad-latam-2017-people.jpg" /></p>
+<h2>¿Que hicimos?</h2>
+<p>El trabajo comenzó con una matris FODA (Fortalezas, Oportunidades, Debilidades y Amenazas) que propuso Alex, la cual, mientras completabamos, iba dando temas para debatir.  </p>
+<p><img alt="fad-foda" src="/images/article/2017/07/fad-foda.png" /></p>
+<p>Llegado un momento, surgió un brainstorming sobre las tareas que debían realizar los embajadores y asistentes a eventos (en representación de Fedora) antes y después de dicho evento.  </p>
+<p><img alt="fad-eventtasks" src="/images/article/2017/07/fad-eventtasks.jpg" /></p>
+<p>También hubo tareas relacionadas a la producción y distribución de SWAG y con el presupuesto.<br />
+<strong>Los resultados y estrategias devenidos del FAD serán publicados y explicados próximamente, ya que nos encontramos puliendo y detallando todo.</strong>  </p>
+<h2>¿Que faltó?</h2>
+<p>Los resultados fueron los esperados, pero, el tiempo y la falta de representantes de cada país integrante de la región, no nos permitió tratar todos los problemas que tenemos.<br />
+Hay mucho para discutir...  </p>
+<ul>
+<li>Decisiones que tomamos a la ligera por amiguismo (y después nos arrepentimos),  </li>
+<li>Hay embajadores que desconocen los procesos por:<ul>
+<li>Falta de interés o comodidad,  </li>
+<li>Falta de mentores capacitados, desinterés por parte de los mentores, o mentores desactualizados,  </li>
+</ul>
 </li>
-<li>
-<p>Después de instalar SPLIX, solo basta con conectar la impresora (aparecen ventanas para instalar drivers, pero cancelen) e ir a CUPS (http://localhost:631), una vez en CUPS, nos vamos a Administración, y ahí a “Añadir impresora”.</p>
-</li>
-<li>
-<p>En la lista de impresoras locales nos aparece la impresora conectada, la seleccionamos y le damos a “siguiente”.
-<a href="/images/article/2012/10/samsung-printer-on-fedora-1.png"><img alt="samsung-printer-on-fedora-1" src="/images/article/2012/10/samsung-printer-on-fedora-1.png" /></a></p>
-</li>
-<li>
-<p>Luego aparecen las configuraciones para nombre de la impresora, descripción, ubicación, y la opción de compartirla, le damos siguiente (después de configurar a gusto los campos).
-<a href="/images/article/2012/10/samsung-printer-on-fedora-2.png"><img alt="samsung-printer-on-fedora-2" src="/images/article/2012/10/samsung-printer-on-fedora-2.png" /></a></p>
-</li>
-<li>
-<p>Llegamos a la parte donde definimos el controlador, en la lista “Modelo” seleccionamos el modelo que estamos instalando, después “Añadir impresora”.
-<a href="/images/article/2012/10/samsung-printer-on-fedora-3.png"><img alt="samsung-printer-on-fedora-3" src="/images/article/2012/10/samsung-printer-on-fedora-3.png" /></a></p>
-</li>
-<li>
-<p>Finalmente, se nos pide que establezcamos las opciones predeterminadas de la impresora.
-<a href="/images/article/2012/10/samsung-printer-on-fedora-4.png"><img alt="samsung-printer-on-fedora-4" src="/images/article/2012/10/samsung-printer-on-fedora-4.png" /></a></p>
-</li>
-<li>
-<p>Una vez que estemos en la parte de la impresora, dentro de CUPS, podemos probar la impresora seleccionando “Imprimir página de prueba” en la lista “Mantenimiento”.
-<a href="/images/article/2012/10/samsung-printer-on-fedora-5.png"><img alt="samsung-printer-on-fedora-5" src="/images/article/2012/10/samsung-printer-on-fedora-5.png" /></a></p>
-</li>
-</ol>
-<p>La impresora ya está funcionando, pero, a mi personalmente, me quedaron 4 impresoras instaladas en la lista de impresoras de CUPS, por lo que eliminé las que yo no instalé (las detecté por el nombre).</p>
-<p><a href="/images/article/2012/10/samsung-printer-on-fedora-6.png"><img alt="samsung-printer-on-fedora-6" src="/images/article/2012/10/samsung-printer-on-fedora-6.png" /></a></p>
-<p>Bueno, así de sencillo fue instalar las impresoras, espero les haya sido útil.</p>
+<li>Hay embajadores que quieren ser mentores sin haber demostrado ser capaces, o sin haber demostrado interés en el proyecto.  </li>
+<li>Hay embajadores que consideran que siendo embajador no es necesario participar o conocer otro subproyecto.  </li>
+</ul>
+<p>También, hubo actitudes durante los últimos años que habría que haber debatido, pero ciertamente era muy necesario que hubiera más representantes.<br />
+Es difícil admitirlo, pero el amiguismo y la afinidad que hay entre algunos y no entre otros, está dividiendo el grupo.<br />
+Una decisión muy importante que tomamos algunos de los presentes: A los que se fueron, nadie los echó, y si quieren volver, las puertas están abiertas, y podemos hablar sobre que los puso incómodos</p>
+<h3><center><a href="/images/galleries/2017/FADLatam2017" target="_blank">Galería de fotos</a></center></h3>
 	</div><!-- /.entry-content -->        
 </section>
 				</section><!-- #content -->
