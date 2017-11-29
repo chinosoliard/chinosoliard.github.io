@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+	<head>
+	<title>Chino Soliard</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" id="responsive-style-css"  href='/theme/css/style.css' type="text/css" media="all" />
+	<link href="feeds//feeds/atom/all.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Full Atom Feed" />
+
+
+	<link href="feeds//feeds/atom/feed.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Atom Feed" />
+
+	<link href="feeds//feeds/rss/feed.xml" type="application/rss+xml" rel="alternate" title="Chino Soliard RSS Feed" />
+
+	<link href="feeds//feeds/atom/category-fedora.xml" type="application/atom+xml" rel="alternate" title="Chino Soliard Categories Atom Feed" />
+
+	<link href="feeds//feeds/rss/category-fedora.xml" type="application/rss+xml" rel="alternate" title="Chino Soliard Categories RSS Feed" />
+
+
+	</head>
+	<body id="index" class="blog">
+		<div id="container" class="hfeed">
+
+<header id="header" >
+		<h1>Chino Soliard</h1>
+		<h2>IT specialist | FOSS enthusiast | Fedora Contributor</h2>
+</header>    
+	
+<nav id="menu">
+	<a href="http://www.chinosoliard.com/index.html">$ ./Blog </a>
+	<a href="http://www.chinosoliard.com/archives.html">$ ./BlogHistory </a> 
+	<a href="http://www.chinosoliard.com/categories.html">$ ./CategoriesList</a>
+	
+	<a  href="http://www.chinosoliard.com/pages/about-me.html">$ ./pages/AboutMe</a>
+	
+</nav> <!-- /#nav -->
+			<section id="wrapper" class="clearfix">
+
+				<section id="content" class="grid col-620" >
+<section id="post" class="post hentry">
+	<header>
+		<h2 class="post-title" >Instalando Fedora en Raspberry Pi 2</h2>
+<p>
+###############
+</br>Date = <time datetime="2017-11-28" pubdate="pubdate">2017-11-28</time>
+</br>Category = <a href="http://www.chinosoliard.com/category/fedora.html">Fedora</a>
+</br>
+Tags = <a href="http://www.chinosoliard.com/tag/fedora.html">Fedora</a> <a href="http://www.chinosoliard.com/tag/raspberry.html">Raspberry</a> <a href="http://www.chinosoliard.com/tag/rpi.html">RPi</a> <a href="http://www.chinosoliard.com/tag/arm.html">ARM</a></br>
+Lang = es </br>
+Translations:
+<a href="http://www.chinosoliard.com/blog/2017/nov/installing-fedora-on-raspberry-pi-2-b-en.html">en</a>
+
+</br>###############
+</p>
+	</header>
+	<div class="post-entry">
+		<p><a href="https://www.raspberrypi.org" target="_blank"><img alt="Raspberry Pi" src="/images/static/RaspberryPi-150.png" class="alignright"></a> Hace un buen par de años conocí las <a href="https://www.raspberrypi.org">Raspberry</a>, y desde entonces quise tener una. El tiempo pasó, y salió la Raspberry Pi 2, y salió la Raspbery Pi 3, y salió la Raspberry Pi Zero, y yo sin mi Raspbery... Después de unos 3 años, ¡me compré una!.. Tengo una <a href="https://www.raspberrypi.org/products/raspberry-pi-2-model-b/">Raspberry Pi 2 Model B</a> hace unas 2 semanas , y, por cuestiones de tiempo, no he podido usarla, ni siquiera prepararla. Así que ahora, que voy a ponerme manos a la obra, voy a hacer una pequeña guía de como instalar Fedora en la Raspberry, usando <a href="https://getfedora.org/en/workstation/">Fedora Workstation</a>. <em>Más adelante publicaré una guía de como hacerlo por consola</em></p>
+        	<p><a href="/images/article/2017/11/RaspberryPi2.jpg"><img alt="RaspberryPi2B" src="/images/article/2017/11/RaspberryPi2.jpg"></a>  </p>
+<h2>¿Qué es Raspberry Pi?</h2>
+<p>Se podría decir que es <strong>una micro-computadora, como para resumir</strong>, pero si queremos extender un poco la explicación, podemos decir que es un "ordenador de placa reducida" (en realidad, single-board computer, o SBC), es decir, una computadora completa montada en una sola placa.<br>
+Todas las Raspberry Pi tienen un tamaño aproximado al de una tarjeta de crédito (a excepción de la <a href="https://www.raspberrypi.org/products/raspberry-pi-zero/">Zero</a> que tiene la mitad de tamaño), lo que hace que sea usada para muchos proyectos IoT (Internet of Things, o Internet de las cosas); También, tienen salida HDMI, USB, y conexión ethernet, inclusive, la versión 3, tiene WiFi incluido.<br>
+La alimentación es vía microUSB (el peor invento en los últimos años :-P), siempre con 5V, pero varía el amperaje de acuerdo a la versión. Por último, no tiene ningún almacenamiento, tiene un slot microSD, en donde debe ir una tarjeta con el sistema operativo que se vaya a utilizar.  </p>
+<p>En éste caso vamos a hacer una instalación mínima de Fedora en una <strong>Raspberry Pi 2 Model B</strong>, prepararemos todo desde una PC con Fedora instalado.  </p>
+<h2>¿Que vamos a necesitar?</h2>
+<ul>
+<li><strong>Raspberry Pi (2 o 3):</strong><br>
+    Obviamente, vamos a necesitar una Raspbery. ¿Por qué 2 o 3? Porque para éste caso, vamos a usar Fedora Media Writer, el cual, entre sus opciones, solo es compatible con esas versiones.  </li>
+<li><strong>Fuente de alimentación:</strong><br>
+    De acuerdo a la versión de Raspberry que utilicemos, vamos a necesitar una fuente de alimentación distinta, por el consumo de la placa. Una fuente de 5V 2,5 amperes es suficiente para cualquiera de las 2 versiones, mientras que la Raspberry Pi 2 puede funcionar correctamente con una fuente de 5V 2 amperes.  </li>
+<li><strong>Memoria MicroSD:</strong><br>
+    Como expliqué anteriormente, la Raspberry bootea el sistema operativo desde la MicroSD, por lo tanto, es necesario una tarjeta microSD de por lo menos 8GB de capacidad. Recomiendo, además, que sea Clase 10 o superior. Para éste ejemplo vamos a usar una memoria de 16GB clase 10.  </li>
+<li><strong>Cable HDMI (y display, obvio):</strong><br>
+    Si bien las Raspberry tienen una salida analógica de audio y video, es más seguro que tengas un display (monitor o TV) con HDMI, para usarlo necesitamos, obviamente, un cable HDMI.  </li>
+<li><strong>Teclado USB:</strong><br>
+    Vamos a necesitar un teclado para poder controlar la Raspberry antes de poder tener algún acceso para control remoto. Necesitamos que sea USB. Depende de la finalidad que tenga la Raspberry, puede ser que también quieran un mouse.</li>
+<li><strong>Dungle WiFi USB:</strong><br>
+    En el caso de no tener posibilidad de hacer una conexión por red cableada, podemos usar una placa WiFi USB para conectarnos a alguna red.  </li>
+<li><strong>Imágen de Fedora para ARM:</strong><br>
+    Al ser Raspberry un dispositivo con procesador ARM, vamos a tener que descargar una <a href="https://fedoraproject.org/wiki/Architectures/ARM/Raspberry_Pi?rd=Raspberry_Pi#Downloading_the_Fedora_ARM_image">imágen de Fedora para ARM</a>, en éste caso, como aclaré antes, vamos a usar la <a href="https://download.fedoraproject.org/pub/fedora/linux/releases/26/Spins/armhfp/images/Fedora-Minimal-armhfp-26-1.5-sda.raw.xz">versión "mínimal"</a>, por la capacidad de la memoria.  </li>
+<li>
+<p><strong>Fedora Media Writer:</strong><br>
+<a href="https://fedoraproject.org/wiki/How_to_create_and_use_Live_USB">Fedora Media Writer</a> es un software diseñado para crear dispositivos USB y tarjetas de memorias booteables, lo vamos a usar justamente para eso, crear la imágen de arranque de Fedora en la tarjeta microSD.<br>
+    En Fedora, la instalación se puede hacer desde el centro de Software, o con el comando:  </p>
+<p><code># dnf install mediawriter</code>  </p>
+</li>
+<li>
+<p><strong>GParted:</strong><br>
+<a href="http://gparted.sourceforge.net/">GParted</a> es un editor de particiones compatible con GNOME, lo vamos a usar para modificar la partición que crea Fedora Media Writer.<br>
+    La instalación en Fedora también puede hacerse desde el centro de Software, sino, con el comando:  </p>
+<p><code># dnf install gparted</code>  </p>
+</li>
+</ul>
+<hr>
+<h1>¡Manos a la obra!</h1>
+<p><strong>NOTA:</strong> <em>Los screenshots fueron tomados hace unas semanas, cuando todavía no estaba disponible Fedora 27.</em></p>
+<h2>Paso 0: Descargar todo lo necesario</h2>
+<p>Instalaremos Fedora Media Writer y GParted, podemos hacerlo desde el Centro de Software o vía CLI con el comando:  </p>
+<p><code># dnf -y install mediawriter gparted</code>  </p>
+<p>También, deberemos descargar la imágen ARM de la versión de Fedora que queramos instalar, podemos ver las opciones en:<br>
+<a href="https://fedoraproject.org/wiki/Architectures/ARM/Raspberry_Pi?rd=Raspberry_Pi#Downloading_the_Fedora_ARM_image">https://fedoraproject.org/wiki/Architectures/ARM/Raspberry_Pi?rd=Raspberry_Pi#Downloading_the_Fedora_ARM_image</a>  </p>
+<h2>Paso 1: Crear microSD con Fedora</h2>
+<ol>
+<li>Iniciamos Fedora Media Writer<br>
+<img alt="mediawriter-0" src="/images/article/2017/11/mediawriter-0.png"></li>
+<li>Vamos a "Mostrar sabores adicionales de Fedora" en la parte inferior de la lista de opciones.
+    <img alt="mediawriter-1" src="/images/article/2017/11/mediawriter-1.png"></li>
+<li>En la lista que apareció en la parte superior, seleccionamos ARMv7.
+    <img alt="mediawriter-2" src="/images/article/2017/11/mediawriter-2.png"></li>
+<li>Elegimos "Imágen personalizada" en la lista principal, y seleccionamos la imágen que descargamos.
+    <img alt="mediawriter-3" src="/images/article/2017/11/mediawriter-3.png"></li>
+<li>En la ventana que  nos apareció, seleccionamos la versión de Raspberry que vamos a usar (y la tarjeta que vamos a escribir, si es necesario), y luego "Escribir al disco".
+    <img alt="mediawriter-4" src="/images/article/2017/11/mediawriter-4.png"></li>
+<li>Escribimos la contraseña de root, para poder escribir la tarjeta de memoria.
+    <img alt="mediawriter-5" src="/images/article/2017/11/mediawriter-5.png"></li>
+<li>Esperamos...
+    <img alt="mediawriter-6" src="/images/article/2017/11/mediawriter-6.png"></li>
+<li>Listo.
+    <img alt="mediawriter-7" src="/images/article/2017/11/mediawriter-7.png"></li>
+</ol>
+<h2>Paso 2: Modificar la partición root ("/")</h2>
+<p>Para hacer la imágen descargable lo más pequeña posible, se redujo a un mínimo el tamaño de la partición raíz o root ("/"), que es, básicamente, donde se guarda todo el sistema operativo y los que usaremos, tenemos ahora la posibilidad de crear particiones adicionales y/o agrandar la partición principal. En éste caso, vamos sólo a agrandar la partición root.  </p>
+<ol>
+<li>
+<p>Iniciamos GParted<br>
+<strong>Nota:</strong> Si tienen problema para ejecutarlo, es un <strong><a href="http://gparted-forum.surf4.info/viewtopic.php?id=17446">problema de Wayland</a></strong>, habitual y no solucionado hasta la fecha. La solución es ejecutar (no es necesario usar root o sudo) el comando  </p>
+<p><code>$ xhost +SI:localuser:root</code>  </p>
+<p><img alt="gparted-0" src="/images/article/2017/11/gparted-0.png">
+2. Seleccionamos, en la lista de dispositivos de la parte superior, la que corresponda a la memoria microSD
+<img alt="gparted-1" src="/images/article/2017/11/gparted-1.png">
+3. Ahora podemos cómo ver está particionada la tarjeta microSD. En la imágen a continuación, está seleccionada la partición "/", pero, si prestan atención, está montada (tiene una llave a la izquierda), lo cual no va a permitir que la modifiquemos. Hay que desmontarla.
+<img alt="gparted-2" src="/images/article/2017/11/gparted-2.png">
+4. Desmontarlo es tan sencillo como apretarle botón derecho a la partición y luego "Desmontar", y esperar a que termine de desmontarse (apenas unos segundos).
+<img alt="gparted-3" src="/images/article/2017/11/gparted-3.png">
+5. Ahora podemos redimensionar la partición, para ésto, en el menú que se despliega desde la partición cuando usamos el botón derecho, seleccionamos "Redimensionar/mover"<br>
+<img alt="gparted-4" src="/images/article/2017/11/gparted-4.png">
+6. En la ventana que nos aparece, estiramos la partición al máximo posible (o a lo que pretendan). Lo que estamos haciendo es usar el espacio que esta sin asignar.
+<img alt="gparted-5" src="/images/article/2017/11/gparted-5.png">
+7. Después de aceptar las modificaciones a la partición, nos aparecerán dichas modificaciones en una cola de trabajos, si estamos de acuerdo con los cambios, le damos clic a "Aplicar todas las operaciones".
+<img alt="gparted-6" src="/images/article/2017/11/gparted-6.png"><br>
+8. A continuación, nos aclara que la operación puede causar la perdida de datos. Si estamos seguros de lo que vamos a hacer, "Aplicar". 
+<img alt="gparted-7" src="/images/article/2017/11/gparted-7.png"><br>
+9. Esperamos a que termine...
+<img alt="gparted-8" src="/images/article/2017/11/gparted-8.png"><br>
+<img alt="gparted-9" src="/images/article/2017/11/gparted-9.png"><br>
+<img alt="gparted-10" src="/images/article/2017/11/gparted-10.png"><br>
+10. Vemos los cambios y comprobamos que todo haya salido bien.
+<img alt="gparted-11" src="/images/article/2017/11/gparted-11.png"><br>
+Si todo salió bien, ya podemos continuar con la memoria en la Raspberry.</p>
+</li>
+</ol>
+<h2>Paso 3: Arrancando la Raspberry Pi</h2>
+<p><a href="/images/article/2017/11/Raspberry-Cables.jpg"><img alt="Raspberry-Cables" src="/images/article/2017/11/Raspberry-Cables.jpg"></a>  </p>
+<ol>
+<li>Colocamos la memoria microSD en la Raspberry Pi.</li>
+<li>Conectamos todo lo que sea necesario (cable HDMI, cable de red, teclado y/o mouse, demás dispositivos USB)</li>
+<li>(por último, <strong>¡siempre!</strong>) Conectamos la fuente de alimentación a la Raspberry.</li>
+</ol>
+<h2>Paso 4: Configurando Fedora</h2>
+<p>Al finalizar el arranque, Fedora inicia un asistente de configuración; Disculpen la foto (en el celular se veía mejor).<br>
+<a href="/images/article/2017/11/Raspberry-Fedora-Wizard.jpg"><img alt="Raspberry-Fedora-Wizard" src="/images/article/2017/11/Raspberry-Fedora-Wizard.jpg"></a>  </p>
+<p>Éste asistente, tiene 5 opciones, con subopciones.<br>
+A continuación, muestro en profundidad las opciones del menú:  </p>
+<ol>
+<li><strong>Idioma</strong><br>
+   Ésto mostrará la lista de idiomas disponibles para instalación. <strong>21</strong> es español.  </li>
+<li><strong>Timezone</strong><br>
+   Hay que configurar la zona horaria. A veces lo detecta automáticamente, si no, se puede modificar después.  </li>
+<li><strong>Configuración de red</strong>  <ol>
+<li><strong>Set host name</strong><br>
+ Usamos ésta opción para darle un nombre al host (hostname.domain) (Ej: raspberrypi.micasa)  </li>
+<li><strong>Configurar red</strong><br>
+ Si necesitáramos una configuración especifica de red (IP, DNS, etc), ésta es la opción. Usualmente, los routers otorgan configuración automáticamente via DHCP.  </li>
+</ol>
+</li>
+<li><strong>set root password</strong><br>
+    Es <strong>necesario</strong> configurar una contraseña para "root", ya que es el superusuario del sistema.  </li>
+<li><strong>Crear usuario</strong><br>
+    Es cómodo crear un usuario durante el wizard, aunque puede hacerse después con la "root".  </li>
+</ol>
+<p>Cuando terminamos de configurar lo que queramos/necesitemos, apretamos <strong>c "continue"</strong>, y listo. La Raspberry se reiniciará tomando la configuración  </p>
+<h2>Paso 5: Actualizar</h2>
+<p>Una vez que arrancó, deberíamos actualizar el sistema. Ésto puede complicarse de acuerdo al tamaño de la memoria microSD, y de la versión de Fedora que usemos, ya que puede ocurrir que no alcance el espacio para descargar todas las actualizaciones. Si tienen ese problema, pueden ir instalando de manera selectiva las actualizaciones, para ir sobrescribiendo archivos con las actualizaciones, y así dejando espacio para otras.<br>
+Para actualizar <strong>todo</strong> el sistema, debemos ejecutar el comando:  </p>
+<p><code># dnf update</code>  </p>
+<p>E "y" o "s" cuando pregunte si queremos proceder.<br>
+Si caemos en el problema de la falta de capacidad de la memoria, podemos hojear las cosas que se van a actualizar en la lista actualizaciones que arrojaría el comando anterior, y ejecutarlo de forma selectiva para un paquete específico, por ejemplo:  </p>
+<p><code># dnf update curl</code>  </p>
+<p>O podemos hacerlo con varios paquetes específicos, por ejemplo:  </p>
+<p><code># dnf update curl libcurl</code>  </p>
+<h2>Paso 6: Ahora les toca a ustedes</h2>
+<p>Esto fue una pequeña guía para instalar Fedora Minimal, es decir, es hasta ahora, solo la linea de comandos.<br>
+Pueden probar con otras versiones de Fedora, o instalar en Fedora Minimal un entorno de escritorio de su preferencia; Yo, por mi parte, voy a instalarle sway o i3wm, y empezar a armarlo con lo que necesite.  </p>
+<p>Próximamente subo una <strong>guía sobre como instalar i3</strong> a partir de éstos pasos.</p>
+	</div><!-- /.entry-content -->        
+</section>
+				</section><!-- #content -->
+
+<section id="widgets" class="grid col-300 fit" >
+<section id="widget-image-1" class="widget-image">
+	<div class="widget" id="widget">
+		<a href="http://www.fedoraproject.org" target="_blank" alt="Fedora Project">		<img src="http://www.chinosoliard.com/images/widgets/fedora.png">
+</a>	</div>
+</section>
+
+	<!-- 	<section id="widget-search" class="widget-wrapper widget_search">
+		<form id="searchform" action="http://www.google.com/search" method="get">
+			<input id="q" class="field" type="text" placeholder="Search Blog" name="q" ></input>
+			<input id="ie" name="ie" type="hidden" value="utf-8" ></input>
+			<input id="oe" name="oe" type="hidden" value="utf-8" ></input>
+			<input id="channel" name="channel" type="hidden" value="suggest" ></input>
+			<input id="searchsubmit" class="submit" type="submit" value="">
+		</form>
+	</section>
+ -->
+
+<section id="widget-tagcloud" class="widget-wrapper widget_archive">
+	<div class="widget-title">
+		Tagcloud
+	</div>
+	<div>
+		<ul class="tagcloud">
+        <li class="tag-1">
+            <a href="http://www.chinosoliard.com/tag/fedora.html">
+            Fedora
+            </a>
+        </li>
+        <li class="tag-1">
+            <a href="http://www.chinosoliard.com/tag/gnulinux.html">
+            GNU/Linux
+            </a>
+        </li>
+        <li class="tag-1">
+            <a href="http://www.chinosoliard.com/tag/event.html">
+            event
+            </a>
+        </li>
+        <li class="tag-2">
+            <a href="http://www.chinosoliard.com/tag/android.html">
+            Android
+            </a>
+        </li>
+        <li class="tag-2">
+            <a href="http://www.chinosoliard.com/tag/parana.html">
+            Paraná
+            </a>
+        </li>
+        <li class="tag-2">
+            <a href="http://www.chinosoliard.com/tag/flisol.html">
+            FLISOL
+            </a>
+        </li>
+        <li class="tag-2">
+            <a href="http://www.chinosoliard.com/tag/lugparana.html">
+            LugParana
+            </a>
+        </li>
+        <li class="tag-2">
+            <a href="http://www.chinosoliard.com/tag/ice-cream-sandwich.html">
+            Ice Cream Sandwich
+            </a>
+        </li>
+        <li class="tag-2">
+            <a href="http://www.chinosoliard.com/tag/sony-ericsson.html">
+            Sony Ericsson
+            </a>
+        </li>
+        <li class="tag-2">
+            <a href="http://www.chinosoliard.com/tag/ics.html">
+            ICS
+            </a>
+        </li>
+</ul>		
+	</div>
+</section>
+	
+<section id="widget-image-2" class="widget-image">
+	<div class="widget" id="widget">
+		<a href="http://www.lugparana.org" target="_blank" alt="Linux User Group Paraná (Argentina)">		<img src="http://www.chinosoliard.com/images/widgets/lugparana.png">
+</a>	</div>
+</section>
+ 
+<section id="widget-links" class="widget-wrapper widget_archive">
+	<div class="widget-title">
+		Links
+	</div>
+	<ul>
+		<li><a href="http://www.fedoraproject.org">Fedora Project</a></li>
+		<li><a href="http://www.lugparana.org">LUG Paraná (AR)</a></li>
+		<li><a href="http://www.python.org">Python</a></li>
+		<li><a href="http://www.sysarmy.com.ar">SysArmy</a></li>
+	</ul>
+</section>
+
+<section id="widget-image-3" class="widget-image">
+	<div class="widget" id="widget">
+		<a href="http://sysarmy.com.ar/" target="_blank" alt="sysarmy - El soporte de los que dan soporte">		<img src="http://www.chinosoliard.com/images/widgets/sysarmy.png">
+</a>	</div>
+</section>
+</section><!-- widgets -->
+	
+			</section><!-- /#wrapper -->
+
+	<footer id="footer" class="clearfix">
+		<div class="grid col-940" >
+        		<p>Theme responsive-cli-theme by <a href="http://www.chinosoliard.com">Chino Soliard</a></p>
+			<p>Powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a></p>
+		</div>
+	</footer>
+
+	</div>
+</body>
+</html>
